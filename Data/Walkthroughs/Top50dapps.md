@@ -7,7 +7,7 @@ Start with top 50 DApps listed on `DAppradar.com`, ranked by the total value of 
 > Reviewed 70 DApps in total - 50 met the criteria, 10 did not offer MetaMask (but supports another wallet), and remaining 10 included websites that were informational, duplicates, or blocked.
 
 ## Top 50
-1. https://ambient.finance/
+1. https://app.uniswap.org/
 2. https://www.sushi.com/
 3. https://phoenix.chaincolosseum.org/
 4. https://aerodrome.finance/
@@ -15,7 +15,7 @@ Start with top 50 DApps listed on `DAppradar.com`, ranked by the total value of 
 6. https://app.radiant.capital/
 7. https://portal.polygon.technology/
 8. https://app.liquity.fi/
-9. https://app.uniswap.org/
+9. https://ambient.finance/
 10. https://app.ether.fi/
 11. https://solend.fi/
 12. https://vvs.finance/
