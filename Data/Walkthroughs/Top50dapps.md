@@ -8,17 +8,22 @@ Start with top 50 DApps listed on `DAppradar.com`, ranked by the total value of 
 
 ## Notes during walkthroughs
 
-| Option/issue                  | instances |
-| ----------------------------- | --------- |
-| prompts with "this site"      | 1         |
-| switch network dapp option    | 1         |
-| ~~ difficult to switch        | 1         |
-| prompts with trx predictions  | 1         |
-| dapps asking unlmt approvals  | 1         |
-| ~~ can't adjust on dapp       | 1         |
-| ~~ show x but ask xx amount   |           |
-| ~~ no option to revoke apprv  | 1         |
-| dapp option to disconnect     | 1         |
+| Option/issue                   | instances  |
+| :----------------------------- | ---------: |
+| prompts with "this site"       | 1          |
+| MetaMask cues indicating site  |            |
+||                       ***SWITCH NETWORK*** |
+| switch network dapp option     | 1          |
+| ~~ difficult to switch         | 1          |
+||                    ***PREDICTED CHANGES*** |
+| prompts with trx predictions   | 1          |
+||                            ***APPROVALS*** |
+| dapps asking unlmt approvals   | 1          |
+| ~~ can't adjust on dapp        | 1          |
+| ~~ show x but ask xx amount    |            |
+| ~~ no option to revoke apprv   | 1          |
+||                           ***DISCONNECT*** |
+| dapp option to disconnect      | 1          |
 
 
 ## Top 50
