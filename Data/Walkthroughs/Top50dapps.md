@@ -10,20 +10,22 @@ Start with top 50 DApps listed on `DAppradar.com`, ranked by the total value of 
 
 | Option/issue                   | instances  |
 | :----------------------------- | ---------: |
-| prompts with "this site"       | 1          |
-| MetaMask cues indicating site  |            |
+||                      ***DAPP INDICATORS*** |
+| dapps showing connected wallet | 3          |
+| prompts with "this site"       | 3          |
+| MetaMask cues indicating site  | 7          |
 ||                       ***SWITCH NETWORK*** |
-| switch network dapp option     | 1          |
-| ~~ difficult to switch         | 1          |
+| switch network from dapp       | 3          |
+| ~~ difficult to switch         | 0          |
 ||                    ***PREDICTED CHANGES*** |
-| prompts with trx predictions   | 1          |
+| trxs with wallet's predictions | 2          |
 ||                            ***APPROVALS*** |
 | dapps asking unlmt approvals   | 1          |
-| ~~ can't adjust on dapp        | 1          |
-| ~~ show x but ask xx amount    |            |
-| ~~ no option to revoke apprv   | 1          |
+| ~~ can't set on dapp           | 3          |
+| ~~ show x but ask xx amount    | 0          |
 ||                           ***DISCONNECT*** |
-| dapp option to disconnect      | 1          |
+| dapp option to disconnect      | 3          |
+| ~~ no option to revoke apprv   | 3          |
 
 
 ## Top 50
@@ -91,3 +93,12 @@ Start with top 50 DApps listed on `DAppradar.com`, ranked by the total value of 
 - https://saberdao.io/
 - https://zklend.com/
 
+
+## Screenshots for various cues/indicators about DApp site in MetaMask
+![favicon + domain + url](image.png)
+![favicon](image-1.png)
+![url](image-2.png)
+![favicon + url](image-3.png)
+![favicon + url (pill-shape)](image-4.png)
+![url + empty favicon](image-5.png)
+![url listed in a congested interface](image-6.png)
