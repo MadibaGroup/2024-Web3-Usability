@@ -1,7 +1,5 @@
 # Methodology for Cognitive Walkthrough 
 
-
-
 ## Assumptions about the User
 
 - Technical awareness:
