@@ -6,6 +6,21 @@ Start with top 50 DApps listed on `DAppradar.com`, ranked by the total value of 
 
 > Reviewed 70 DApps in total - 50 met the criteria, 10 did not offer MetaMask (but supports another wallet), and remaining 10 included websites that were informational, duplicates, or blocked.
 
+## Notes during walkthroughs
+
+| Option/issue                  | instances |
+| ----------------------------- | --------- |
+| prompts with "this site"      | 1         |
+| switch network dapp option    | 1         |
+| ~~ difficult to switch        | 1         |
+| prompts with trx predictions  | 1         |
+| dapps asking unlmt approvals  | 1         |
+| ~~ can't adjust on dapp       | 1         |
+| ~~ show x but ask xx amount   |           |
+| ~~ no option to revoke apprv  | 1         |
+| dapp option to disconnect     | 1         |
+
+
 ## Top 50
 1. https://app.uniswap.org/
 2. https://www.sushi.com/
