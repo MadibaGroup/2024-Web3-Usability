@@ -11,21 +11,21 @@ Start with top 50 DApps listed on `DAppradar.com`, ranked by the total value of 
 | Option/issue                   | instances  |
 | :----------------------------- | ---------: |
 ||                      ***DAPP INDICATORS*** |
-| dapps showing connected wallet | 3          |
-| prompts with "this site"       | 3          |
-| MetaMask cues indicating site  | 7          |
+| dapps showing connected wallet | 5/5        |
+| prompts with "this site"       | 5/5        |
+| MetaMask cues indicating site  | 8          |
 ||                       ***SWITCH NETWORK*** |
-| switch network from dapp       | 3          |
-| ~~ difficult to switch         | 0          |
+| switch network from dapp       | 4/4        |
+| ~~ difficult to switch         | 0/4        |
 ||                    ***PREDICTED CHANGES*** |
-| trxs with wallet's predictions | 2          |
+| trxs with wallet's predictions | 4/5        |
 ||                            ***APPROVALS*** |
-| dapps asking unlmt approvals   | 1          |
-| ~~ can't set on dapp           | 3          |
-| ~~ show x but ask xx amount    | 0          |
+| dapps asking unlmt approvals   | 1/4        |
+| ~~ can't set on dapp           | 4/4        |
+| ~~ show x but ask xx amount    | 0/4        |
 ||                           ***DISCONNECT*** |
-| dapp option to disconnect      | 3          |
-| ~~ no option to revoke apprv   | 3          |
+| dapp option to disconnect      | 5/5        |
+| ~~ no option to revoke apprv   | 4/4        |
 
 
 ## Top 50
@@ -102,3 +102,4 @@ Start with top 50 DApps listed on `DAppradar.com`, ranked by the total value of 
 ![favicon + url (pill-shape)](image-4.png)
 ![url + empty favicon](image-5.png)
 ![url listed in a congested interface](image-6.png)
+![url in sign msg request](image-7.png)
