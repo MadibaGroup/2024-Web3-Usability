@@ -11,22 +11,23 @@ Start with top 50 DApps listed on `DAppradar.com`, ranked by the total value of 
 | Option/issue                   | instances  |
 | :----------------------------- | ---------: |
 ||                      ***DAPP INDICATORS*** |
-| dapps showing connected wallet | 10/10      |
-| add ntw prompts w "this site"  | 9/9        |
+| dapps showing connected wallet | 18/19      |
+| add ntw prompts w "this site"  | 16/16      |
 | MetaMask cues indicating site  | 8          |
 ||                       ***SWITCH NETWORK*** |
-| switch network from dapp       | 8/9        |
-| ~~ difficult to switch         | 1/9        |
+| explicit swt ntw optn on dapp  | 12/16      |
+| ~~ difficult to find           | 2/16       |
 ||                    ***PREDICTED CHANGES*** |
-| trxs with wallet's predictions | 9/9        |
-| ~~ shows est only for send     | 2/9        |
+| trxs with wallet's predictions | 14/17      |
+| ~~ shows est only for send     | 5/17       |
 ||                            ***APPROVALS*** |
-| dapps asking unlmt approvals   | 3/6        |
-| ~~ can't set on dapp           | 6/6        |
-| ~~ show x but ask xx amount    | 0/6        |
+| dapps asking unlmt approvals   | 11/14      |
+| ~~ can't set on dapp           | 14/14      |
+| ~~ show x but ask xx amount    | 0/14       |
 ||                           ***DISCONNECT*** |
-| dapp option to disconnect      | 8/9        |
-| ~~ no option to revoke apprv   | 6/6        |
+| dapp option to disconnect      | 16/18      |
+| ~~ no option to revoke apprv   | 13/13      |
+| ~~ doesn't disconnect from MM  | 8/18       |
 
 
 ## Top 50

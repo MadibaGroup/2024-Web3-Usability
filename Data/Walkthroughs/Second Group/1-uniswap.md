@@ -46,6 +46,8 @@ T3. Conduct an operation of the web3 site that does require wallet approval, con
 
 T4. Revert, to the extent possible, any past interactions with the DApp. Disconnect the wallet, unapprove tokens, etc. 
 
+- disconnect option from the site successfully removes the site in the wallet
+
 - No option on DApp to view/revoke token approvals (authorized on its site) when disconnecting it from the wallet. 
     - **Users may expect approvals to be given to DApp (as opposed to contracts) and hence assume incorrectly that disconnect would also remove these permissions**
     - https://support.metamask.io/third-party-platforms-and-dapps/disconnect-wallet-from-a-dapp/
@@ -78,5 +80,6 @@ T4. Revert, to the extent possible, any past interactions with the DApp. Disconn
 ![t3](image-13.png)
 
 ### disconnect/revoke
+![disconnected conf in wallet](image-58.png)
 ![t3](image-10.png)
 ![t4](image-11.png)

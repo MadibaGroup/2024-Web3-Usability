@@ -1,19 +1,24 @@
-# ambient
-https://ambient.finance/
+# colend
+# https://app.colend.xyz/
 
 T1. Proceed to connect wallet to website with a practical mental model (G1-G3) of what connecting means, why the process is what it is (different web3 apps might use different processes), understanding and avoiding risks (G4-G5), and confirming connection is successful (G3) (via the website and via MetaMask).
 
-- Connect wallet option is simple. Shows user name tag.
+- Site doesn't confirm connection after approving wallet prompt, and only suggests that the wallet is on the "wrong network".
+    - Buggy UI. The wallet address and name tag is displayed after switching to the supported network (next step).
 
 T2. Configure wallet to connect to a desired blockchain network (start from mainnet Ethereum). This network has to be supported by the DApp to perform transactions. The supported networks may be different on each DApp.
 
-- Simple dropdown option on the site to choose a supported network.
+- Clicking the "wrong network" button triggers wallet to prompt for the supported network.
 
 T3. Conduct an operation of the web3 site that does require wallet approval, configure and sign the transaction, understand and avoid risks. Covers token balances, gas fees, approvals, signature, confirming transaction, etc.
 
-- Asks for unlimited approval during swap transaction.
+- Need to buy tokens on `CORE Chain` to transact. Bridged tokens on the linked exchange.
 
-- Site notifies when the transaction succeeds and shows a persistent indicator confirming the transaction.
+- Asks for unlimited approval.
+
+- No estimated changes for the trx.
+
+- Shows a `Add to wallet` option to track the supplied token balance.
 
 
 T4. Revert, to the extent possible, any past interactions with the DApp. Disconnect the wallet, unapprove tokens, etc. 
@@ -21,11 +26,18 @@ T4. Revert, to the extent possible, any past interactions with the DApp. Disconn
 - Disconnect option doesn't disconnect site from the wallet (i.e., can reopen site and connect wallet without approving in the wallet)
 
 ## Screenshots
-### connect wallet
-![name tag](image-40.png)
+### connect wallet (no confirmation)
+![connected wallet](image-67.png)
 
-### transaction confirmation
-![confirm prompt](image-41.png)
+### supported network
+![add network](image-71.png)
+
+### trx prompts
+![trx](image-72.png)
+![no estimated changes](image-73.png)
+
+### `add to wallet` option
+![site dialog](image-74.png)
 
 ### disconnect doesn't remove the site from the wallet
-![wallet prompt](image-60.png)
+![wallet prompt](image-75.png)

@@ -20,7 +20,7 @@ T3. Conduct an operation of the web3 site that does require wallet approval, con
 
 T4. Revert, to the extent possible, any past interactions with the DApp. Disconnect the wallet, unapprove tokens, etc. 
 
-- Disconnect option is simple.
+- Disconnect option is simple and removes the site from the wallet
 
 ## Screenshots
 ### connect wallet and sign-in

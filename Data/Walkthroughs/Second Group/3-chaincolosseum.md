@@ -28,6 +28,8 @@ T3. Conduct an operation of the web3 site that does require wallet approval, con
 
 T4. Revert, to the extent possible, any past interactions with the DApp. Disconnect the wallet, unapprove tokens, etc. 
 
+- Disconnect option doesn't disconnect site from the wallet (i.e., can reopen site and connect wallet without approving in the wallet)
+
 - Need to disconnect from both DApps.
 
 
@@ -46,3 +48,6 @@ T4. Revert, to the extent possible, any past interactions with the DApp. Disconn
 ### trx only partially completed
 ![balance on Defiverse](image-24.png)
 ![spending cap approved](image-25.png)
+
+### disconnect doesn't remove site from wallet
+![wallet prompt](image-57.png)
