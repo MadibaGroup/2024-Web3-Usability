@@ -11,25 +11,27 @@ Start with top 50 DApps listed on `DAppradar.com`, ranked by the total value of 
 | Option/issue                   | instances  |
 | :----------------------------- | ---------: |
 ||                      ***DAPP INDICATORS*** |
-| dapps showing connected wallet | 29/30      |
-| add ntw prompts w "this site"  | 28/28      |
+| dapps showing connected wallet | 33/34      |
+| add ntw prompts w "this site"  | 31/31      |
 | MetaMask cues indicating site  | 9          |
 ||                       ***SWITCH NETWORK*** |
-| add ntw prmpts w yllw cautions |  7/11      |
-| add ntw prmpts w red warnings  |  4/11      |
-| explicit swt ntw optn on dapp  | 20/24      |
-| ~~ difficult to find           | 3/24       |
+| add ntw prmpts w yllw cautions |  9/14      |
+| add ntw prmpts w red warnings  |  5/14      |
+| explicit swt ntw optn on dapp  | 23/27      |
+| ~~ difficult to find           | 3/27       |
 ||                    ***PREDICTED CHANGES*** |
-| trxs with wallet's predictions | 23/27      |
-| ~~ shows est only for send     | 6/27       |
+| trxs with wallet's predictions | 26/30      |
+| ~~ shows est only for send     | 6/30       |
 ||                            ***APPROVALS*** |
-| dapps asking unlmt approvals   | 15/21      |
-| ~~ can't restrict on dapp      | 21/21      |
-| ~~ show x but ask xx amount    | 0/21       |
+| dapps asking unlmt approvals   | 16/23      |
+| ~~ can't restrict on dapp      | 23/23      |
+| ~~ show x but ask xx amount    | 0/23       |
 ||                           ***DISCONNECT*** |
-| dapp option to disconnect      | 24/27      |
-| ~~ no opt to revoke unlmt appv | 16/16      |
-| ~~ doesn't disconnect from MM  | 15/27      |
+| dapp option to disconnect      | 28/31      |
+| ~~ no opt to revoke unlmt appv |  /         |
+| ~~ doesn't disconnect from MM  | 16/31      |
+
+TODO: count add ntw prmpts w yllw/red for the first 20 sites.
 
 
 ## Top 50
