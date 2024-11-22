@@ -11,23 +11,25 @@ Start with top 50 DApps listed on `DAppradar.com`, ranked by the total value of 
 | Option/issue                   | instances  |
 | :----------------------------- | ---------: |
 ||                      ***DAPP INDICATORS*** |
-| dapps showing connected wallet | 18/19      |
-| add ntw prompts w "this site"  | 16/16      |
+| dapps showing connected wallet | 20/21      |
+| add ntw prompts w "this site"  | 18/18      |
 | MetaMask cues indicating site  | 8          |
 ||                       ***SWITCH NETWORK*** |
-| explicit swt ntw optn on dapp  | 12/16      |
-| ~~ difficult to find           | 2/16       |
+| add ntw prmpts w yllw cautions |  1/1       |
+| add ntw prmpts w red warnings  |  0/1       |
+| explicit swt ntw optn on dapp  | 14/18      |
+| ~~ difficult to find           | 3/18       |
 ||                    ***PREDICTED CHANGES*** |
-| trxs with wallet's predictions | 14/17      |
-| ~~ shows est only for send     | 5/17       |
+| trxs with wallet's predictions | 15/18      |
+| ~~ shows est only for send     | 5/18       |
 ||                            ***APPROVALS*** |
-| dapps asking unlmt approvals   | 11/14      |
-| ~~ can't set on dapp           | 14/14      |
-| ~~ show x but ask xx amount    | 0/14       |
+| dapps asking unlmt approvals   | 11/15      |
+| ~~ can't restrict on dapp      | 15/15      |
+| ~~ show x but ask xx amount    | 0/15       |
 ||                           ***DISCONNECT*** |
-| dapp option to disconnect      | 16/18      |
+| dapp option to disconnect      | 18/20      |
 | ~~ no option to revoke apprv   | 13/13      |
-| ~~ doesn't disconnect from MM  | 8/18       |
+| ~~ doesn't disconnect from MM  | 10/20      |
 
 
 ## Top 50
@@ -55,7 +57,7 @@ Start with top 50 DApps listed on `DAppradar.com`, ranked by the total value of 
 22. https://app.avalonfinance.xyz/
 23. https://curve.fi/
 24. https://www.saucerswap.finance/
-25. https://app.morpho.org/
+25. 
 26. https://app.ref.finance/
 27. https://balancer.fi/
 28. https://moonwell.fi/
