@@ -11,25 +11,25 @@ Start with top 50 DApps listed on `DAppradar.com`, ranked by the total value of 
 | Option/issue                   | instances  |
 | :----------------------------- | ---------: |
 ||                      ***DAPP INDICATORS*** |
-| dapps showing connected wallet | 20/21      |
-| add ntw prompts w "this site"  | 18/18      |
-| MetaMask cues indicating site  | 8          |
+| dapps showing connected wallet | 29/30      |
+| add ntw prompts w "this site"  | 28/28      |
+| MetaMask cues indicating site  | 9          |
 ||                       ***SWITCH NETWORK*** |
-| add ntw prmpts w yllw cautions |  1/1       |
-| add ntw prmpts w red warnings  |  0/1       |
-| explicit swt ntw optn on dapp  | 14/18      |
-| ~~ difficult to find           | 3/18       |
+| add ntw prmpts w yllw cautions |  7/11      |
+| add ntw prmpts w red warnings  |  4/11      |
+| explicit swt ntw optn on dapp  | 20/24      |
+| ~~ difficult to find           | 3/24       |
 ||                    ***PREDICTED CHANGES*** |
-| trxs with wallet's predictions | 15/18      |
-| ~~ shows est only for send     | 5/18       |
+| trxs with wallet's predictions | 23/27      |
+| ~~ shows est only for send     | 6/27       |
 ||                            ***APPROVALS*** |
-| dapps asking unlmt approvals   | 11/15      |
-| ~~ can't restrict on dapp      | 15/15      |
-| ~~ show x but ask xx amount    | 0/15       |
+| dapps asking unlmt approvals   | 15/21      |
+| ~~ can't restrict on dapp      | 21/21      |
+| ~~ show x but ask xx amount    | 0/21       |
 ||                           ***DISCONNECT*** |
-| dapp option to disconnect      | 18/20      |
-| ~~ no option to revoke apprv   | 13/13      |
-| ~~ doesn't disconnect from MM  | 10/20      |
+| dapp option to disconnect      | 24/27      |
+| ~~ no opt to revoke unlmt appv | 16/16      |
+| ~~ doesn't disconnect from MM  | 15/27      |
 
 
 ## Top 50
@@ -107,3 +107,4 @@ Start with top 50 DApps listed on `DAppradar.com`, ranked by the total value of 
 ![url + empty favicon](image-5.png)
 ![url listed in a congested interface](image-6.png)
 ![url in sign msg request](image-7.png)
+![wallet](image-93.png)
