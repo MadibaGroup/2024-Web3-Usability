@@ -1,5 +1,5 @@
-#
-#
+# karak
+# https://karak.network/
 
 T1. Proceed to connect wallet to website with a practical mental model (G1-G3) of what connecting means, why the process is what it is (different web3 apps might use different processes), understanding and avoiding risks (G4-G5), and confirming connection is successful (G3) (via the website and via MetaMask).
 
