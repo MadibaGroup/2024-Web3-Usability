@@ -11,25 +11,25 @@ Start with top 50 DApps listed on `DAppradar.com`, ranked by the total value of 
 | Option/issue                   | instances  |
 | :----------------------------- | ---------: |
 ||                      ***DAPP INDICATORS*** |
-| dapps showing connected wallet | 39/40      |
-| add ntw prompts w "this site"  | 37/37      |
+| dapps showing connected wallet | 48/50      |
+| add ntw prompts w "this site"  | 43/43      |
 | MetaMask cues indicating site  | 9          |
 ||                       ***SWITCH NETWORK*** |
-| add ntw prmpts w yllw cautions |  12/20     |
-| add ntw prmpts w red warnings  |  7/20      |
-| explicit swt ntw optn on dapp  | 28/32      |
-| ~~ difficult to find           | 3/32       |
+| add ntw prmpts w yllw cautions |  16/26     |
+| add ntw prmpts w red warnings  |  9/26      |
+| explicit swt ntw optn on dapp  | 34/38      |
+| ~~ difficult to find           | 4/38       |
 ||                    ***PREDICTED CHANGES*** |
-| trxs with wallet's predictions | 30/34      |
-| ~~ shows est only for send     | 7/34       |
+| trxs with wallet's predictions | 35/40      |
+| ~~ shows est only for send     | 10/40      |
 ||                            ***APPROVALS*** |
-| dapps asking unlmt approvals   | 17/26      |
+| dapps asking unlmt approvals   | 18/29      |
 | ~~ can't restrict on dapp      |  /         |
-| ~~ show x but ask xx amount    | 0/26       |
+| ~~ show x but ask xx amount    | 0/29       |
 ||                           ***DISCONNECT*** |
-| dapp option to disconnect      | 34/37      |
+| dapp option to disconnect      | 45/48      |
 | ~~ no opt to revoke unlmt appv |  /         |
-| ~~ doesn't disconnect from MM  | 19/37      |
+| ~~ doesn't disconnect from MM  | 28/48      |
 
 TODO: count add ntw prmpts w yllw/red for the first 20 sites.
 
@@ -59,7 +59,7 @@ TODO: count add ntw prmpts w yllw/red for the first 20 sites.
 22. https://app.avalonfinance.xyz/
 23. https://curve.fi/
 24. https://www.saucerswap.finance/
-25. 
+25. https://loopring.io/
 26. https://app.ref.finance/
 27. https://balancer.fi/
 28. https://moonwell.fi/
