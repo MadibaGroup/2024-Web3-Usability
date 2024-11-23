@@ -24,6 +24,9 @@ T4. Revert, to the extent possible, any past interactions with the DApp. Disconn
 ### connect wallet
 ![name tag](image-40.png)
 
+### add network
+![network](image-166.png)
+
 ### transaction confirmation
 ![confirm prompt](image-41.png)
 

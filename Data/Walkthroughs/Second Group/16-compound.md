@@ -23,6 +23,9 @@ T4. Revert, to the extent possible, any past interactions with the DApp. Disconn
 - Disconnect option doesn't disconnect site from the wallet (i.e., can reopen site and connect wallet without approving in the wallet)
 
 ## Screenshots
+### add network
+![wallet](image-167.png)
+
 ### no estimated changes
 ![trx prompt](image-66.png)
 

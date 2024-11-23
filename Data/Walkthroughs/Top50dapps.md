@@ -12,11 +12,11 @@ Start with top 50 DApps listed on `DAppradar.com`, ranked by the total value of 
 | :----------------------------- | ---------: |
 ||                      ***DAPP INDICATORS*** |
 | dapps showing connected wallet | 48/50      |
-| add ntw prompts w "this site"  | 43/43      |
+| add ntw prompts w "this site"  | 45/45      |
 | MetaMask cues indicating site  | 9          |
 ||                       ***SWITCH NETWORK*** |
-| add ntw prmpts w yllw cautions |  16/26     |
-| add ntw prmpts w red warnings  |  9/26      |
+| add ntw prmpts w yllw cautions | 28/45      |
+| add ntw prmpts w red warnings  | 15/45      |
 | explicit swt ntw optn on dapp  | 34/38      |
 | ~~ difficult to find           | 4/38       |
 ||                    ***PREDICTED CHANGES*** |
@@ -30,8 +30,6 @@ Start with top 50 DApps listed on `DAppradar.com`, ranked by the total value of 
 | dapp option to disconnect      | 45/48      |
 | ~~ no opt to revoke unlmt appv |  /         |
 | ~~ doesn't disconnect from MM  | 28/48      |
-
-TODO: count add ntw prmpts w yllw/red for the first 20 sites.
 
 
 ## Top 50

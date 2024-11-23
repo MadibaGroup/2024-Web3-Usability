@@ -32,6 +32,9 @@ T4. Revert, to the extent possible, any past interactions with the DApp. Disconn
 ![t1](image-15.png)
 ![alt text](image-16.png)
 
+### add network
+![alt text](image-163.png)
+
 ### selecting token
 ![alt text](image-17.png)
 

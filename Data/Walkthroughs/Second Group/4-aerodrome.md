@@ -27,6 +27,9 @@ T4. Revert, to the extent possible, any past interactions with the DApp. Disconn
 ![sign-in](image-26.png)
 ![sign req for tos](image-27.png)
 
+### switch to base
+![alt text](image-164.png)
+
 ### network/rpc
 ![rpc time error](image-29.png)
 ![rpc change option](image-28.png)

@@ -22,6 +22,9 @@ T4. Revert, to the extent possible, any past interactions with the DApp. Disconn
 
 
 ## Screenshots
+### add network
+![wallet](image-168.png)
+
 ### trx
 ![trx prompt](image-68.png)
 

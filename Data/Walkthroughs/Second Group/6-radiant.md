@@ -27,5 +27,8 @@ T4. Revert, to the extent possible, any past interactions with the DApp. Disconn
 ### predicted changes
 ![trx prompt](image-32.png)
 
+### add network
+![alt text](image-165.png)
+
 ### withdraw deposit
 ![spending cap req](image-33.png)
