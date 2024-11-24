@@ -46,9 +46,9 @@ https://app.uniswap.org/
     4. "Contract address: Execute" Redundant with above, unclear what Execute means
     5. Icon for destination with balances of source
        * does not match with 2 (which has question mark) and not clear that it is supposed to be destination rather than source for example
-       * ![Random 01](fig/Random 01.png)
+       * ![Random 01](fig/Random%2001.png)
        * Also shows balance information of source beside cues for destination
-       * ![Random 02](fig/Random 02.png) 
+       * ![Random02](fig/Random%2002.png) 
        * 
     6. Details: Estimated changes
        * MetaMask aware of Uniswap and shows custom interface
@@ -57,7 +57,7 @@ https://app.uniswap.org/
          * Estimated fee is ETH and USD
          * Max fee only in ETH
          * ETH amounts are tiny (gwei better?), for example is Max and Estimate the same (count the 0's)
-         * ![Random 03](fig/Random 03.png)
+         * ![Random 03](fig/Random%2003.png)
     8. Sign or not
 
 
