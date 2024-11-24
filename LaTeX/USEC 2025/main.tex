@@ -340,13 +340,19 @@ After selecting a token (ETH) to sell, the prompt shows the available wallet bal
 and select to buy USDT using the token search option.
 % If the input is a variation of the token (e.g., ``usdt''), the search returns an empty list.
 % This is a slight violation of G1.
-The search displayed the correct token only when the input exactly matched ``USDT''. Other variations (e.g., ``usdt'' or ``tether'') did not yield similar results, violating G1.
-The results included two tokens displayed with the same name ``Tether USD'' and symbol ``USDT'', though with different icons and addresses.
+%The search displayed the correct token only when the input exactly matched ``USDT''. Other variations (e.g., ``usdt'' or ``tether'') did not yield similar results, violating G1.
+Searching ``usdt'' displayed three entries of which one was marked with an warning symbol. When selected, a prompt cautioned that the token was not among frequently traded tokens.
+While only one entry was marked with this symbol, two entries triggered the same warning prompt.
+%The results included two tokens displayed with the same name ``Tether USD'' and symbol ``USDT'', though with different icons and addresses.
 % potentially confusing users despite differences in the address. %, and a warning icon beside one of the result. 
 % This could confuse users despite the token addresses are different. 
-Selecting any of the two tokens prompted a warning stating that the token is not popular among past transactions, however only one of the token included a warning icon.
-Although these warnings aim to alert users about potential scams, conflicting cues likely cause confusion and reduce the effectiveness of warnings.
+%Selecting any of the two tokens prompted a warning stating that the token is not popular among past transactions, however only one of the token included a warning icon.
+Although these warnings aim to alert users about potential scams, conflicting cues likely cause confusion (violating G6-G7) and reduce the effectiveness of warnings.
 % Then, a prompt is shown to confirm swap along with estimated fees.
+
+%\begin{figure}[h]
+%\includegraphics[width=\0.5columnwidth]{uniswap-trx-prompt}
+%\end{figure}
 
 Uniswap triggers a wallet prompt with details about the transaction. %and prompts for user approval.
 At the top of the prompt, a small icon beside the contract address displays a generic message prompting users to verify before trusting the contract.
@@ -354,11 +360,11 @@ This violates G2 as there is no guidance on how to verify.
 The prompt also includes a section with predictions about the resulting balance changes, however this is not guaranteed as indicated within an icon.
 We discuss this issue further in Sec.~\ref{sec:results:contracts}.
 The prompt also includes estimated gas fees and an option to set a limit on the maximum fee.
-This option (in a new prompt) lists four choices with different limits and processing times (options with lower fees tradeoff on longer wait times).
+This option (in a secondary prompt) lists four choices with different limits and processing times (options with lower fees tradeoff on longer wait times).
 
 After selecting ``low'' gas and submitting the transaction,
-the wallet notified that the transaction had failed without any description of the issue.
-An external link from the wallet showed the error output directly from the contract, however this message is ambiguous with no instructions on recovery options.
+the wallet notified that the transaction had failed without any description.
+An external link from the wallet showed the error output directly from the contract, however this message is ambiguous with no recovery instructions.
 This violates G4.
 % failed txn -- https://basescan.org/tx/0x6179f9c2c2a502c21199df313b4e221cb9bc3b7c37eed1c828e9ebaaf9e603f4
 % The notification led to a wallet prompt which also did not state the issue and only included an external link for details about the status.
