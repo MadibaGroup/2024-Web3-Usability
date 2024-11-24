@@ -235,7 +235,12 @@ By contrast, our study learns through direct interaction with a broad set of pop
 
 \section{Methodology}
 
-A cognitive walkthrough~\cite{wharton1994cognitive} is a usability evaluation methodology often employed first to establish a priority list of usability issues to be considered with other methods. A dual expert (knowledgeable in both usability and in the domain of study---web3, in our case) evaluates if users with a specific persona (\textit{e.g.,} no prior familiarity) can successfully use an application interface and complete a set of core tasks without violating a set of guidelines. For our study, we define our core tasks as:
+A cognitive walkthrough~\cite{wharton1994cognitive} is a usability evaluation methodology often employed first to establish a priority list of usability issues to be considered with other methods. A dual expert (knowledgeable in both usability and in the domain of study---web3, in our case) evaluates if users with a specific persona (\textit{e.g.,} no prior familiarity) can successfully use an application interface and complete a set of core tasks without violating a set of guidelines.
+For our study, we assume that users are comfortable with web 2.0 websites and browser extensions.
+We also assume basic familiarity with blockchain user interfaces, e.g., gained from bitcoin wallets that have existed before web3 DApps.
+Two evaluators independently generated an initial list of tasks users perform on web3 DApps. Then we discussed each task and whether a similar task has been studied in the past (\textit{e.g.,} as part of bitcoin wallet evaluation) and agreed to focus on tasks unique to web3.
+We excluded one-time tasks (such as setting up an Ethereum wallet) and decided to focus on frequent tasks users need to perform across DApps.
+Our final list of core tasks included:
 
 \begin{enumerate}
     \item [T1.] Connect MetaMask wallet to a given DApp website. %preferred wallet (MetaMask) to a given DApp website.
@@ -245,6 +250,7 @@ A cognitive walkthrough~\cite{wharton1994cognitive} is a usability evaluation me
 \end{enumerate}
 
 Fig.~\ref{figWeb3Architecture} shows the workflow of these tasks.
+We perform walkthroughs by simulating step-by-step user actions in each core task and asking ourselves whether the interface satisfied a list of usability guidelines.
 We draw our guidelines directly from the established usable security literature---specifically past studies of Bitcoin~\cite{eskandari2018first,moniruzzaman2020examining}. We repeat verbatim:
 
 \begin{enumerate}
@@ -258,14 +264,12 @@ We draw our guidelines directly from the established usable security literature-
     \item[G8.] Users should be aware of the application’s status at all times. % keep users informed
 \end{enumerate}
 
-A walkthrough allows for an evaluation across a large number of DApps, in contrast to time-limited and costly user studies. During our initial analysis, two evaluators defined the core tasks and discussed the walkthrough procedure for two popular DApps (ENS and Uniswap). 
-We selected the core tasks by asking ourselves about the steps users need to follow in order to complete typical web3 transactions. %(e.g., exchanging tokens, pledging assets, registering domain names).
-Then, we examined if user decisions during these steps can affect security or privacy.
-We settled on the above three core tasks because these are primary tasks that reflect typical user workflows of interaction with DApps and contracts.
-If users are not fully informed during these core tasks, attackers can mislead users into granting access to their wallet data and assets.
-% We settled on the above three core tasks because (i) these are required tasks for completing transactions, and (ii) user decisions in these tasks affect security and privacy of their data and assets. %due to their widespread applicability
-For each core task, we analyzed the information displayed to users and evaluated if each interface satisfied the above guidelines, taking note of violations. 
-After refinement based on this analysis, the main researcher evaluated each of the top 50 DApps listed on \textit{DAppRadar},\footnote{\url{https://dappradar.com/}} ranked by the total value of assets held under the DApp's contract over a 30-day period, as of Sept 2, 2024. We used the MetaMask wallet for these tasks.
+A walkthrough allows for an evaluation across a large number of DApps, in contrast to time-limited and costly user studies. During initial analysis, the two evaluators performed walkthroughs on different DApps to identify problematic areas and inform further walkthroughs.
+%discussed the walkthrough procedure for two popular DApps (ENS and Uniswap). 
+%We settled on the above three core tasks because these are primary tasks that reflect typical user workflows of interaction with DApps and contracts.
+%If users are not fully informed during these core tasks, attackers can mislead users into granting access to their wallet data and assets.
+%For each core task, we analyzed the information displayed to users and evaluated if each interface satisfied the above guidelines, taking note of violations. 
+After refinement based on this analysis, the main researcher evaluated each of the top 50 DApps listed on \textit{DAppRadar},\footnote{\url{https://dappradar.com/}} ranked by the total value of assets held under the DApp's contract over a 30-day period (Nov 2024). We used the MetaMask wallet for these tasks.
 %This list allows us to focus on the most popular Web3 services and identify opportunities for improvements.
 
 
