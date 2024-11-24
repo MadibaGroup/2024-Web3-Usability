@@ -2,7 +2,9 @@
 https://app.uniswap.org/
 
 
- T1. Proceed to connect wallet to website with a practical mental model (G1-G3) of what connecting means, why the process is what it is (different web3 apps might use different processes), understanding and avoiding risks (G4-G5), and confirming connection is successful (G3) (via the website and via MetaMask).
+## Core Task 01
+
+*Proceed to connect wallet to website with a practical mental model (G1-G3) of what connecting means, why the process is what it is (different web3 apps might use different processes), understanding and avoiding risks (G4-G5), and confirming connection is successful (G3) (via the website and via MetaMask).*
 
 - prompt asks for a permission to "use your enabled networks". It's not clear how the site can "use" the networks (against G8). 
     - **this applies to all DApps**
@@ -15,7 +17,9 @@ https://app.uniswap.org/
     - **this applies to all DApps**
 
 
-T2. Configure wallet to connect to a desired blockchain network (start from mainnet Ethereum). This network has to be supported by the DApp to perform transactions. The supported networks may be different on each DApp.
+## Core Task 02
+
+*Configure wallet to connect to a desired blockchain network (if it is not already on this network). This network has to be supported by the DApp to perform transactions. The supported networks may be different on each DApp.* 
 
 - (T2 prompt during T3) wallet only shows "this site" when prompting to add a network. This may be an attacker-in-the-middle in an attempt to get the user on a malicious network (G5). 
 
@@ -30,7 +34,9 @@ T2. Configure wallet to connect to a desired blockchain network (start from main
     - **this applies to all DApps**
 
 
-T3. Conduct an operation of the web3 site that does require wallet approval, configure and sign the transaction, understand and avoid risks. Covers token balances, gas fees, approvals, signature, confirming transaction, etc.
+## Core Task 03
+
+*Conduct an operation of the web3 site that does require wallet approval, configure and sign the transaction, understand and avoid risks. Covers token balances, gas fees, approvals, signature, confirming transaction, etc.*
 
 - Inconsistent warning cues when selecting a token. For example,searching for "usdt" returns three results. Only one entry includes a warning icon, however selecting two of the entries result in the same warning message. Selecting a malicious token can result in loss of assets (G5).
 
@@ -44,7 +50,9 @@ T3. Conduct an operation of the web3 site that does require wallet approval, con
     - **this applies to all DApps**
 
 
-T4. Revert, to the extent possible, any past interactions with the DApp. Disconnect the wallet, unapprove tokens, etc. 
+## Core Task 04
+
+*Revert, to the extent possible, any past interactions with the DApp. Disconnect the wallet, unapprove tokens, etc.* 
 
 - disconnect option from the site successfully removes the site in the wallet
 
