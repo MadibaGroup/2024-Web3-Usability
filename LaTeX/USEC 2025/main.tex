@@ -114,7 +114,7 @@ Our evaluation uncovers four common usability challenges impacting users' abilit
 %
 \section{Introduction}
 
-When Ethereum introduced its vision for smart contracts that can be executed on a blockchain, user interfaces had to be rethought. In contrast to Bitcoin, Ethereum users are no longer merely making payments to a receiving address; they are interacting in arbitrary ways with decentralized applications (DApps) to perform more complex tasks like trading assets, establishing loans, bidding in auctions, and registering domain names. Furthermore, new DApps emerge too frequently for standalone wallet software to be customized for specific DApps. The idea that users might transact with smart contracts in a `raw' way, by manually supplying a contract address, function to be run, and parameters to the function, was an obvious non-starter for non-expert users. 
+When Ethereum introduced its vision for smart contracts that can be executed on a blockchain, user interfaces had to be rethought. In contrast to Bitcoin, Ethereum users are no longer merely making payments to a receiving address; they are interacting in arbitrary ways with decentralized applications (DApps) to perform more complex tasks like trading assets, establishing loans, bidding in auctions, and registering domain names. The idea that users might transact with smart contracts in a `raw' way, by manually supplying a contract address, function to be run, and parameters to the function, was an obvious non-starter for non-expert users. Furthermore, new DApps emerge too frequently for standalone wallet software to be customized for specific DApps. 
 
 \subsection{A Tangled Web3}
 
@@ -135,7 +135,9 @@ When Ethereum introduced its vision for smart contracts that can be executed on 
     \label{figWeb3Architecture}
 \end{figure}
 
-The solution is what we now call web3 (see Figure~\ref{figWeb3Architecture}). A DApp augments the smart contract with a companion website, accessible over the standard internet, which provides a user interface and mostly abstracts away the technical details of the contract. The connection between the website and the blockchain is convoluted however, hence the need for a usability analysis. Websites typically pass scripts to the user and the website, now running client-side, will interact with third party APIs to fetch up-to-date blockchain data that is general to all users. To customize the content for the specific user, the website does not maintain accounts server-side for its users, as in web 2.0. Instead the user is expected to run a standalone client, called a wallet (\textit{e.g.,} MetaMask). After authorization, the wallet will supply the user's addresses to the website, and the website can propose blockchain actions to the wallet to present to the user for signature. 
+The solution is what we now call web3 (see Figure~\ref{figWeb3Architecture}). A DApp augments the smart contract with a companion website, accessible over the standard internet, which provides a user interface and mostly abstracts away the technical details of the contract. The connection between the website and the blockchain is convoluted however, hence the need for a usability analysis. To customize the content for the specific user, the website does not maintain accounts server-side for its users, as in web 2.0. Instead the user is expected to run a standalone client, called a wallet (\textit{e.g.,} MetaMask). After authorization, the wallet will supply the user's addresses to the website, and the website can propose blockchain actions to the wallet to present to the user for signature. 
+
+%Websites typically pass scripts to the user and the website, now running client-side, will interact with third party APIs to fetch up-to-date blockchain data that is general to all users. 
 
 In summary, (i) users interact with a website first, rather than their wallet; (ii) after user authorization, the website and wallet can pass data between them; (iii) the wallet is agnostic about what the DApp is or does; (iv) all authorizations are done by the user in the wallet software; and (v) users will be asked to sign transactions in their wallet that they, and the wallet itself, will not `understand,' instead relying on the trustworthiness of the website proposing the transaction.
 
@@ -147,7 +149,7 @@ In summary, (i) users interact with a website first, rather than their wallet; (
 
 \subsection{Literature Review}
 
-Web3 is a security subject as malicious DApps exploit the complex architecture of web3 to deceive users into granting permissions to their data and steal any funds they own through their web3 wallet~\cite{si2024understanding,torres2023your}.
+Malicious DApps exploit the complex architecture of web3 to deceive users into granting permissions to their data and steal any funds they own through their web3 wallet~\cite{si2024understanding,torres2023your}.
 Web3 wallets inform users about fraud with warnings and prompts, but recent attacks~\cite{toulas2024lottiefiles,vismaya2024pepe,zmudzinski2024Eigenlayer} show that attacks continue to work.
 
 Starting at \textit{USEC 2015}~\cite{eskandari2018first}, numerous studies on Bitcoin usability have been conducted~\cite{eskandari2018first,gao2016of,krombholz2017the,mai2020user,sas2017design}, as well as generic blockchain technology~\cite{frohlich2022blockchain,jang2022userExperience,jang2020userPerspectives}, with one focus on wallet software~\cite{voskobojnikov2021u} finding misinformed mental models due to an over-reliance on understanding of traditional web 2.0 systems. However we have argued web3 is more complex than a simple merge of Bitcoin concepts with web 2.0 concepts.
@@ -324,10 +326,10 @@ We used the MetaMask wallet for these tasks.
 
 \subsection{A Sample Walkthrough}
 
-For space considerations, we do not present the full details of each walkthrough of the 4 core tasks over the 50 DApps in our study. However we have made all walkthroughs publicly available.\footnote{GitHub: link removed for anonymity, can distribute via program chairs as needed.} Here we present one representative sample walkthrough of the third core task (T3) (transaction approval) for Uniswap~\cite{uniswap}, a decentralized exchange service on Ethereum allowing users to exchange one type of (ERC-20) token for another. For this case, it was conducted independently by two reviewers and discussed.
+For space considerations, we do not present the full details of each walkthrough of the 4 core tasks over the 50 DApps in our study. However we have made all walkthroughs publicly available.\footnote{GitHub: link removed for anonymity; can share with chairs as needed.} Here we present one representative sample walkthrough of the third core task (T3) (transaction approval) for Uniswap~\cite{uniswap}, a decentralized exchange service on Ethereum allowing users to exchange one type of (ERC-20) token for another. For this case, it was conducted independently by two reviewers and discussed.
 
-We assume the persona of a typical web3 user who owns one or more tokens, uses a common wallet such as MetaMask, and has basic understanding about Ethereum tokens and transactions.
-For this task, we also assume the user has already connected their wallet to Uniswap (T1) and successfully switched to a target network (T2). % exchange ETH to Tether USD on Base
+%We assume the persona of a typical web3 user who owns one or more tokens, uses a common wallet such as MetaMask, and has basic understanding about Ethereum tokens and transactions.
+For this task, we assume the user has already connected their wallet to Uniswap (T1) and successfully switched to a target network (T2). % exchange ETH to Tether USD on Base
 
 The swap page on Uniswap site prompts the user to select the tokens and the exchange amounts.
 After selecting a token (ETH) to sell, the prompt shows the available wallet balance and an option to use the maximum amount. We input an arbitrary amount to sell,
@@ -349,7 +351,7 @@ Although these warnings aim to alert users about potential scams, conflicting cu
 %\includegraphics[width=\0.5columnwidth]{uniswap-trx-prompt}
 %\end{figure}
 
-Uniswap triggers a complex prompt from MetaMask with details about the transaction, split into 7 subpanels. %and prompts for user approval.
+Uniswap triggers MetaMask, which displays a complex prompt split into 7 subpanels. %and prompts for user approval.
 At the top of the prompt, a small icon beside the contract address displays a generic message prompting users to verify before trusting the contract.
 This violates G2 as there is no guidance on how to verify.
 The prompt also includes a section with predictions about the resulting balance changes, however this is not guaranteed as indicated within an icon.
@@ -358,14 +360,14 @@ The prompt summarizes the source and destination addresses in abbreviated form, 
 
 The prompt also includes estimated `gas' fees which is Ethereum's system for paying for transaction execution. Option to set a limit on the maximum fee.
 This option (in a secondary prompt) lists four choices with different limits and processing times (options with lower fees tradeoff on longer wait times).
-After selecting ``low'' gas and submitting the transaction,
-the wallet notified that the transaction had failed without any description.
+After processing a transaction at ``market'' rates, we tried ``low'' gas. 
+The wallet notified that the transaction had failed without any description.
 An external link from the wallet showed the error output directly from the contract, however this message is ambiguous with no recovery instructions.
 This violates G4.
 % failed txn -- https://basescan.org/tx/0x6179f9c2c2a502c21199df313b4e221cb9bc3b7c37eed1c828e9ebaaf9e603f4
 % The notification led to a wallet prompt which also did not state the issue and only included an external link for details about the status.
-Uniswap's troubleshooting guide~\cite{uniswapTransactionFail} lists potential reasons for transaction failures including possible issues caused by low gas limits, although users cannot be expected to find such resources for each transaction failure.\footnote{We attempted another transaction submitting with the default (``market'') gas fee limit, which was successful.}
-The DApp/wallet interface can address these issues by explaining transaction failures and providing instructions on possible recovery options.
+Uniswap's troubleshooting guide~\cite{uniswapTransactionFail} lists potential reasons for transaction failures including possible issues caused by low gas limits, although users cannot be expected to find such resources for each transaction failure.
+%The DApp/wallet interface can address these issues by explaining transaction failures and providing instructions on possible recovery options.
 
 % described the status as \texttt{Fail with Custom Error 'TransactionDeadlinePassed ()'}; without any further instructions, this may not be sufficient to help users identify and recover from the issue (violating G4).\footnote{Uniswap had set a 10-minute limit on transaction wait times; Lowering the gas fee limit on MetaMask led to the transaction to wait past this deadline, and thus triggering the issue. See~\cite{uniswapTransactionFail} for further details. The DApp/wallet interface can help users by describing the issue and providing instructions on possible recovery options.} 
 % We set a lower limit for gas fees since users might prioritize paying less for gas (trading off on longer transaction wait times).
@@ -418,7 +420,7 @@ Our evaluations still uncover important usability issues that carry significant 
 \section{Research Agenda}
 \label{sec:results:topIssues}
 
-After completing the walkthroughs of the 50 DApps, we discussed the findings and identified a set of four common usability issues hat may lead users to make dangerous errors (G5) across numerous DApps. We would direct future research efforts to consider these issues.
+After completing the walkthroughs of the 50 DApps, we discussed the findings and identified a set of four common usability issues that may lead users to make dangerous errors (G5) across numerous DApps. We would direct future research efforts to consider these issues.
 
 % = = = = = = = = = = = = = = = = = =  = = = = = = = = =
 
@@ -680,6 +682,18 @@ Future user studies could determine users' mental models about DApp permissions 
 
 \appendix
 
+\subsection{Research Artifacts}
+
+Our online repository\footnote{GitHub: link removed for anonymity; can share with chairs as needed.} includes the following data, available to other researchers:
+
+\begin{enumerate}
+\item Documentation of the task agreement process and list of core tasks (also in Appendix~\ref{app:tasks});
+\item List of heuristics (also in Section~\ref{sec:method});
+\item List of DApps (also in Appendix~\ref{app:dapps});
+\item Independent walkthroughs of Uniswap by two expert reviewers; and
+\item Walkthrough of remaining 49 DApps by lead reviewer. 
+\end{enumerate}
+
 \subsection{Selection of Core Tasks}
 \label{app:tasks}
 
@@ -879,17 +893,7 @@ Our dataset for the walkthroughs included the following 50 DApps:
 50. https://www.lynex.fi/
 
 
-\subsection{Research Artifacts}
 
-Our online repository\footnote{GitHub: link removed for anonymity, can distribute via program chairs as needed.} includes the following data, available to other researchers:
-
-\begin{enumerate}
-\item Documentation of the task agreement process and list of core tasks (also in Appendix~\ref{app:tasks});
-\item List of heuristics (also in Section~\ref{sec:method});
-\item List of DApps (also in Appendix~\ref{app:dapps});
-\item Independent walkthroughs of Uniswap by two expert reviewers; and
-\item Walkthrough of remaining 49 DApps by lead reviewer. 
-\end{enumerate}
 
 
 
