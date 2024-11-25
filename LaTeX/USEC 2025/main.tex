@@ -228,6 +228,7 @@ Thus, it is important for users to choose endpoints that align with their privac
 % spreadsheet -- work, contributions, how our paper is different;
 
 \section{Methodology}
+\label{sec:method}
 
 A cognitive walkthrough~\cite{wharton1994cognitive} is a usability evaluation methodology often employed first to establish a priority list of usability issues to be considered with other methods. A dual expert (knowledgeable in both usability and in the domain of study---web3, in our case) evaluates if users with a specific persona (\textit{e.g.,} no prior familiarity) can successfully use an application interface and complete a set of core tasks without violating a set of guidelines.
 For our study, we assume that users are comfortable with web 2.0 websites and browser extensions.
@@ -323,8 +324,8 @@ We used the MetaMask wallet for these tasks.
 
 \subsection{A Sample Walkthrough}
 
-For space considerations, we do not present the full details of each walkthrough of 4 tasks over 50 DApps however we have made all walkthroughs publicly available.\footnote{GitHub: link removed for anonymity, can distribute via program chairs as needed.} Here we present one representative sample walkthrough to illustrate what the methodology looks like.
-The sample is the (T3) transaction approval task in the DApp Uniswap~\cite{uniswap}, a decentralized exchange service on Ethereum allowing users to exchange one type of (ERC-20) token for another.
+For space considerations, we do not present the full details of each walkthrough of the 4 core tasks over the 50 DApps in our study. However we have made all walkthroughs publicly available.\footnote{GitHub: link removed for anonymity, can distribute via program chairs as needed.} Here we present one representative sample walkthrough of the third core task (T3) (transaction approval) for Uniswap~\cite{uniswap}, a decentralized exchange service on Ethereum allowing users to exchange one type of (ERC-20) token for another. For this case, it was conducted independently by two reviewers and discussed. Note however the walkthrough is not intended to evaluate the usability of Uniswap per se, but to collect common usability issues that lead to dangerous errors (G5) across DApps. For this reason, we did not compute agreement statistics, we simply accumulated all issues found by all reviewers.
+
 We assume the persona of a typical web3 user who owns one or more tokens, uses a common wallet such as MetaMask, and has basic understanding about Ethereum tokens and transactions.
 For this task, we also assume the user has already connected their wallet to Uniswap (T1) and successfully switched to a target network (T2). % exchange ETH to Tether USD on Base
 
@@ -685,6 +686,8 @@ Future user studies could determine users' mental models about DApp permissions 
 \appendix
 
 \subsection{Selection of Core Tasks}
+\label{app:tasks}
+
 We make the following assumptions about the user during our walkthroughs:
 \begin{itemize}
 	\item Technical awareness:
@@ -776,6 +779,8 @@ Our list of Core Tasks included the following:
 \end{enumerate}
 
 \subsection{List of DApps for Evaluation}
+\label{app:dapps}
+
 Our dataset for the walkthroughs included the following 50 DApps:
 
 1. https://app.uniswap.org/
@@ -879,7 +884,17 @@ Our dataset for the walkthroughs included the following 50 DApps:
 50. https://www.lynex.fi/
 
 
+\subsection{Research Artifacts}
 
+Our online repository\footnote{GitHub: link removed for anonymity, can distribute via program chairs as needed.} includes the following data, available to other researchers:
+
+\begin{enumerate}
+\item Documentation of the task agreement process and list of core tasks (also in Appendix~\ref{app:tasks});
+\item List of heuristics (also in Section~\ref{sec:method});
+\item List of DApps (also in Appendix~\ref{app:dapps});
+\item Independent walkthroughs of Uniswap by two expert reviewers; and
+\item Walkthrough of remaining 49 DApps by lead reviewer. 
+\end{enumerate}
 
 
 
