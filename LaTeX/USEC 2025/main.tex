@@ -590,16 +590,24 @@ Future research can determine the extent to which malicious behavior can be pred
 % look into RAID 2022 paper https://dl.acm.org/doi/pdf/10.1145/3545948.3545963
 %- unlimited approval is prevalent (based on public transactions data), likely due to many DApps requesting unlimited approval and not all wallets allow changing the amount.
 %- unlimited approval involves big security risk since (1) the DApp may be malicious/hacked, and (2) the DApp may be honest but vulnerable contract may be exploited by attackers to steal approved funds
-The final issue has been explored in the literature by Wang \textit{et al}~\cite{wang2022penny} but we include the issue for completeness.
-Tokens deployed on Ethereum follow standard interfaces, such as ERC20, meaning wallet software can interoperate even without knowing anything specific about the token.
+%The final issue has been explored in the literature by Wang \textit{et al}~\cite{wang2022penny} but we include the issue for completeness.
+Tokens deployed on Ethereum follow standard interfaces, such as ERC20, meaning wallets can interoperate even without knowing anything specific about the token.
 The ERC20 standard requires an `approve' function. Instead of Alice sending 10 tokens to Bob, she can approve Bob to take 10 tokens from her at any time until she removes the approval. 
 Many DApps move tokens through approvals rather than transfers.
 
-Prioritizing simplicity and flexibility over security, 18 of 29 DApps (62\%) in our study request \textit{unlimited} approvals; Fig.~\ref{figUnlimitedApproval} shows an example request.
-Similarly, Wang \textit{et al}~\cite{wang2022penny} found 60\% of DApps requesting unlimited approvals.
+Prioritizing simplicity and flexibility over security, 18 of 29 DApps (62\%) in our study request \textit{unlimited} approvals. %Fig.~\ref{figUnlimitedApproval} shows an example request.
+This finding is similar to Wang \textit{et al}~\cite{wang2022penny} where they found 60\% of DApps requested unlimited approvals.
 %60\% of DApps in \cite{wang2022penny} request \textit{unlimited} approvals. 
 Unlimited approvals are problematic when a DApp is later compromised (or malicious to begin with)~\cite{incident2020Bancor,incident2021Primitive}.
-Many DApps provide no option to adjust the approval amount, while some have been found to display one amount but prompt for unlimited (observed in \cite{wang2022penny} as an example of a deceptive/dark pattern~\cite{mathur2019dark}). While MetaMask does allow approvals to be adjusted, once set, it is up to the user to remember to un-approve.  
+Many DApps provide no option to adjust the approval amount, while some have been found to display one amount but prompt for unlimited (observed in \cite{wang2022penny} as an example of a deceptive pattern~\cite{mathur2019dark}). While MetaMask does allow approvals to be adjusted, once set, it is up to the user to remember to un-approve.  
+
+Another revocation concern relates to permissions granted to DApps, such as viewing accounts and initiating transaction requests. 
+%When connecting a wallet, users grant DApps permissions such as viewing account information and initiating transactions.
+Users can revoke these permissions through ``disconnect'' options, displayed in their MetaMask wallet, or on the DApps that trigger the wallet to remove permissions, e.g., using the wallet API~\cite{metamaskRevokePermissions}.
+Among the 48 DApps in our dataset, 94\% of DApps display a disconnect option.
+However, our analysis finds that the permissions are revoked in only 42\% of DApps, while the remaning DApps only appear to show that the user has `disconnected' the wallet.
+%The remaining DApps appear to show that the user has `disconnected' the wallet.
+Users may misinterpret the disconnect in these DApps to be comparable with the disconnect option in the wallet, though the DApp can continue to monitor their accounts and initiate transactions. 
 
 %(although other variants exist), 
 %Many past incidents (e.g.,~\cite{incident2020Bancor,incident2021Primitive}) have revealed that the allowance mechanism of ERC20 tokens (i.e., allowing DApps %to spend user's tokens on their behalf) can be exploited to steal users' tokens.
@@ -623,7 +631,10 @@ Many DApps provide no option to adjust the approval amount, while some have been
 % wallet shows this value and allows the user to change it, but it's not a safe default.
 
 \subsubsection*{\textbf{Future Work}}
-Attention has been given to allowing users to view, modify, and revoke past approvals, both in the MetaMask dashboard and through third-party tools (e.g., \url{revoke.cash}~\cite{revokeCash}). Because of the ERC20 standard, wallets should recognize an unlimited approval and better warn users, schedule a reminder prompt to revoke for a later time, or allow users to set global limits (with sensible default values) on allowances.
+Attention has been given to allowing users to view, modify, and revoke past approvals, both in the MetaMask dashboard and through third-party tools (e.g., \url{revoke.cash}~\cite{revokeCash}). 
+%Because of the ERC20 standard, wallets should recognize an unlimited approval and better warn users, schedule a reminder prompt to revoke for a later time, or allow users to set global limits (with sensible default values) on allowances.
+Despite these tools, the above issues indicate that it may be challenging to keep users informed and to support informed decisions. 
+Future user studies could determine users' mental models about DApp permissions and explore ways to warn users, for example, by using security nudges~\cite{acquisti2017nudges}, and by allowing users to set global preferences on approvals.
 
 %TWhile there is a lack of mechanisms to prevent users from making unsafe approvals, there exists options for users to reduce or fully revoke already approved allowances.
 %MetaMask dashboard (separate from the transaction prompts) allow users to view and modify or revoke approvals, although such options may not be available on many wallets~\cite{wang2022penny}.
@@ -764,7 +775,108 @@ Our list of Core Tasks included the following:
 	\item[T4.] Revert, to the extent possible, any past interactions with the DApp. Disconnect the wallet, unapprove tokens, etc. 
 \end{enumerate}
 
+\subsection{List of DApps for Evaluation}
+Our dataset for the walkthroughs included the following 50 DApps:
 
+1. https://app.uniswap.org/
+
+2. https://www.sushi.com/
+
+3. https://phoenix.chaincolosseum.org/
+
+4. https://aerodrome.finance/
+
+5. https://autoshark.finance/
+
+6. https://app.radiant.capital/
+
+7. https://portal.polygon.technology/
+
+8. https://app.liquity.fi/
+
+9. https://ambient.finance/
+
+10. https://app.ether.fi/
+
+11. https://solend.fi/
+
+12. https://vvs.finance/
+
+13. https://stargate.finance/
+
+14. https://app.morpho.org/
+
+15. https://app.burrow.finance/
+
+16. https://app.compound.finance/
+
+17. https://tectonic.finance/
+
+18. https://app.colend.xyz/
+
+19. https://app.gmx.io/
+
+20. https://app.sablier.com/
+
+21. https://app.yei.finance/
+
+22. https://app.avalonfinance.xyz/
+
+23. https://curve.fi/
+
+24. https://www.saucerswap.finance/
+
+25. https://loopring.io/
+
+26. https://app.ref.finance/
+
+27. https://balancer.fi/
+
+28. https://moonwell.fi/
+
+29. https://ring.exchange/
+
+30. https://app.alienbase.xyz/
+
+31. https://app.vertexprotocol.com/
+
+32. https://lfj.gg/
+
+33. https://app.marinade.finance/
+
+34. https://pancakeswap.finance/
+
+35. https://quickswap.exchange/
+
+36. https://kyberswap.com/
+
+37. https://fluid.instadapp.io/
+
+38. https://app.juice.finance/
+
+39. https://fi.woo.org/
+
+40. https://blur.io/
+
+41. https://camelot.exchange/
+
+42. https://karak.network/
+
+43. https://carv.io/
+
+44. https://spooky.fi/
+
+45. https://neopin.io/
+
+46. https://dragonswap.app/
+
+47. https://klayswap.com/en
+
+48. https://icecreamswap.com/
+
+49. https://decentraland.org/
+
+50. https://www.lynex.fi/
 
 
 
