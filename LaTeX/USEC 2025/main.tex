@@ -28,6 +28,7 @@
 \usepackage{xcolor}
 \usepackage{tikz}
 \usepackage{url}
+\usepackage{subfig}
 \usepackage{hyperref}
 \makeglossaries
 \input{acronyms} %%file that has all the acronyms
@@ -429,10 +430,17 @@ We now present the highest priority issues we found during our walkthroughs of 5
 \subsection{Issue 1: Weak link between wallet prompts and DApps}
 
 Users can have multiple DApp websites open at once, while the wallet is a singular and separate interface. We found MetaMask attempts to associate prompts with its originating DApp by displaying domain names, however it is inconsistent.
-In 100\% of the ($n=45$) prompts for adding a network (T2), we found that the wallet did not link prompts to websites: \textit{e.g.,} `allow \textit{this site} to add a network?' Connecting to a malicious network compromises the user's privacy (links user's IP address and wallet addresses), displays information about the state of the blockchain, and can propose fraudulent transactions (timed to follow specific user actions). In other cases, the domain is shown but the visual cue varies (boxed/rounded/unboxed; domain/url/favicon; sizes/colors/locations); overall, we found seven variations in how the wallet displays the domains.
+In 100\% of the ($n=45$) prompts for adding a network (Fig.~\ref{figAddNetwork}), we found that the wallet did not link prompts to websites: \textit{e.g.,} `allow \textit{this site} to add a network?' Connecting to a malicious network compromises the user's privacy (links user's IP address and wallet addresses), displays information about the state of the blockchain, and can propose fraudulent transactions (timed to follow specific user actions). In other cases, the domain is shown but the visual cue varies (boxed/rounded/unboxed; domain/url/favicon; sizes/colors/locations); overall, we found six variations (shown in Fig.~\ref{figDappIndicators}) in how the wallet displays the domains.
 
-\begin{figure}[h]
-\includegraphics[width=.5\columnwidth]{screenshots/add-network-this-site}
+\begin{figure}[tb]
+\centering
+\subfloat[No DApp indicator]{
+	\label{figAddNetwork}
+	\includegraphics[width=.37\columnwidth]{screenshots/add-network-this-site}}
+\subfloat[Variations in DApp indicators]{
+ 	\label{figDappIndicators}
+	\includegraphics[width=.45\columnwidth]{screenshots/dapp-indicators}}
+\caption{Lack of consistent cues to link prompts to DApps.}
 \end{figure}
 
 Transactions can also queue, say if a user forgets to sign/cancel a transaction in MetaMask or clicks multiple times on the website. MetaMask indicates the number of current requests in the extension icon and a textual indicator in a small font size, but is easy to miss. Users, who have unknowingly queued a transaction and proceed to a new DApp where they take an action that creates a transaction, will be presented with the earlier queued transaction for signature first. 

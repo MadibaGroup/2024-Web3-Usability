@@ -13,7 +13,7 @@ Start with top 50 DApps listed on `DAppradar.com`, ranked by the total value of 
 ||                      ***DAPP INDICATORS*** |
 | dapps showing connected wallet | 48/50      |
 | add ntw prompts w "this site"  | 45/45      |
-| MetaMask cues indicating site  | 7          |
+| MetaMask cues indicating site  | 6          |
 ||                       ***SWITCH NETWORK*** |
 | add ntw prmpts w yllw cautions | 28/45      |
 | add ntw prmpts w red warnings  | 15/45      |
