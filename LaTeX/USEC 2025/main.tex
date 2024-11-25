@@ -104,7 +104,7 @@
 \begin{abstract}
 % The abstract should briefly summarize the contents of the paper in 150--250 words.
 While the usability literature has considered both web 2.0 web services, as well as cypto-currencies like Bitcoin, web3 is more than the sum of these parts. Web3 decentralized applications (DApps) deploy a unique model that creates new usability challenges, security risks to user funds, and privacy risks to user data.
-In this ``vision'' paper, we build a case that web3 needs attention from the usability community. 
+In this `vision' paper, we build a case that web3 needs attention from the usability community. 
 We report on a preliminary study, using expert evaluation, to identify usability challenges across 50 popular Ethereum DApps found `in the wild,' used alongside the popular wallet MetaMask.
 Our evaluation uncovers four common usability challenges impacting users' ability to make informed decisions, and points to opportunities for future user studies and areas for improvement.
 % \keywords{First keyword  \and Second keyword \and Another keyword.}
@@ -156,15 +156,15 @@ For Web3 specifically, we only found two relevant studies. Panicker et al.~\cite
 
 \subsection{Research Gap and Vision}
 
-The ``vision'' of our paper is to draw attention to DApps themselves and the wallet software used to interact with them, examining the interfaces, prompts, indicators, and cues which guide users through security- and privacy-sensitive tasks, looking for usability pitfalls that can lead users to make dangerous errors. To build a case that this is worth attention, we conduct a preliminary study. We identify 50 DApps `in the wild' and conduct a cognitive walkthrough~\cite{wharton1994cognitive} of four core tasks with each DApp. After reviewing our findings, we identify four high-priority usability challenges in current interfaces based on our evaluations, and set forward a research agenda for exploring them in future studies. 
+The `vision' of our paper is to draw attention to DApps themselves and the wallet software used to interact with them, examining the interfaces, prompts, indicators, and cues which guide users through security- and privacy-sensitive tasks, looking for usability pitfalls that can lead users to make dangerous errors. To build a case that this is worth attention, we conduct a preliminary study. We identify 50 DApps `in the wild' and conduct a cognitive walkthrough~\cite{wharton1994cognitive} of four core tasks with each DApp. After reviewing our findings, we identify four high-priority usability challenges in current interfaces based on our evaluations, and set forward a research agenda for exploring them in future studies. 
 
 \section{Background}
 % Web3 security; wallet interaction; usability;
 
-In web 2.0, apps are designed with a front-end website associated with a centralized back-end server and maintained by the website owner.
-Web3 redesigns this structure by replacing centralized services with a blockchain---a network of anonymous validators that store and run programs in exchange for financial rewards (referred to as ``gas'' fees).\footnote{In practice, much of web3 traffic relies on services resembling centralization (cf.~\cite{williams2020infura})}
-Program logic is defined into \textit{contracts} which run on a virtual environment called the \ac*{EVM}.  We discuss related aspects next.
-Figure~\ref{figWeb3Architecture} illustrates the web3 components involved in common tasks performed by users of DApps.
+%In web 2.0, apps are designed with a front-end website associated with a centralized back-end server and maintained by the website owner.
+%Web3 redesigns this structure by replacing centralized services with a blockchain---a network of anonymous validators that store and run programs in exchange for financial rewards (referred to as ``gas'' fees).\footnote{In practice, much of web3 traffic relies on services resembling centralization (cf.~\cite{williams2020infura})}
+%Program logic is defined into \textit{contracts} which run on a virtual environment called the \ac*{EVM}.  We discuss related aspects next.
+%Figure~\ref{figWeb3Architecture} illustrates the web3 components involved in common tasks performed by users of DApps.
 
 \subsection{Wallet-DApp interaction}
 The primary mode for user authorizations for DApps is through wallets typically installed as browser extensions.
@@ -183,12 +183,11 @@ and transaction requests (\textit{eth\_sendTransaction}), which are prompted to 
 % However, these chains are compatible with \ac*{EVM} includes an ecosystem of Ethereum-based blockchain networks (also referred to as \ac*{EVM} networks).\footnote{As of Sept 2024, there are 1,061 EVM networks according to \url{https://chainlist.org/}}
 % describe sidechain (needs to support transfer of assets from and to the main Ethereum chain), bridges
 % mention benefits/need for other networks (lower gas fees, faster transactions, scaling EVM-compatible dapps) and other trade-offs (security, malicious networks, less decentralization)
-Another feature of web3 is its scalability enabled by individual blockchains with distinct features (e.g., lower gas fees, and faster transactions).\footnote{As of Sept 2024, 1,061 blockchains as per \url{https://chainlist.org/}} %besides the main Ethereum blockchain.
-These blockchains, also referred to as \textit{sidechains} and \textit{Layer 2} (L2) chains, run in parallel to the main Ethereum blockchain (L1) but adhere to Ethereum standards, so wallet software can interoperate with only a chain ID (unique identifier for the blockchain) and the \ac*{RPC} URL (address of the remote server which acts as the gateway for the DApp to access the blockchain nodes).
+Due to limits in the scalability of Ethereum experienced under heavy usage, the eco-system has fragmented into numerous performance-oriented alternatives to Ethereum called sidechains (\textit{e.g.,} BNB, Avalance, Polygon, \textit{etc.}) and layer 2s (\textit{e.g.,} Arbitrum, Base, Optimism, \textit{etc.}).\footnote{As of Sept 2024, 1,061 blockchains as per \url{https://chainlist.org/}} These chains run in parallel to the main Ethereum blockchain but adhere to Ethereum standards (called EVM compatibility), so wallet software can interoperate with only a chain ID (unique identifier for the blockchain) and the \ac*{RPC} URL (address of the remote server which acts as the gateway for the DApp to access the blockchain nodes).
 %and maintain separate sets of balances and transaction histories; 
 %Transactions in L2 are eventually recorded onto the main L1 chain, whereas sidechains maintain transactions and balances in isolation.
 % Every \ac*{EVM} network can be described using its chain ID (unique identifier for the blockchain) and the \ac*{RPC} \ac*{URL} (address of the remote server which acts as the gateway for the DApp to access the blockchain nodes).
-Many DApps integrate with multiple chains to support transactions across the ecosystem.
+Many DApps integrate with multiple chains.
 
 
 
@@ -196,7 +195,7 @@ Many DApps integrate with multiple chains to support transactions across the eco
 \label{sec:background:rpc}
 % DApps offer services on different \ac*{EVM} chains, thus requiring users to connect to different chain networks.
 DApps and wallets rely on RPC endpoints\footnote{\url{https://rpc.info/}} to exchange transaction data with \ac*{EVM} networks, using the standard JSON-RPC API~\cite{metamaskJsonRpcApi}.
-For instance, MetaMask relies on Infura as its default endpoint~\cite{metamaskInfura}; note that these separate services are both owned by the same entity.
+For instance, MetaMask relies on Infura as its default endpoint~\cite{metamaskInfura} (both are owned by the company ConsenSys).
 % These networks involve Web3 middleware providers 
 % Network providers of these middleware servers
 These endpoints relate to different privacy implications, e.g., some providers maintain logs of user data transmitted through their servers while others state that they do not collect any user data.
@@ -233,9 +232,8 @@ Thus, it is important for users to choose endpoints that align with their privac
 A cognitive walkthrough~\cite{wharton1994cognitive} is a usability evaluation methodology often employed first to establish a priority list of usability issues to be considered with other methods. A dual expert (knowledgeable in both usability and in the domain of study---web3, in our case) evaluates if users with a specific persona (\textit{e.g.,} no prior familiarity) can successfully use an application interface and complete a set of core tasks without violating a set of guidelines.
 For our study, we assume that users are comfortable with web 2.0 websites and browser extensions.
 We also assume basic familiarity with blockchain user interfaces, e.g., gained from bitcoin wallets that have existed before web3 DApps.
-Two evaluators independently generated an initial list of tasks users perform on web3 DApps. Then we discussed each task and whether a similar task has been studied in the past (\textit{e.g.,} as part of bitcoin wallet evaluation) and agreed to focus on tasks unique to web3.
-We excluded one-time tasks (such as setting up an Ethereum wallet) and decided to focus on frequent tasks users need to perform across DApps.
-Our final list of core tasks included:
+
+Working as two evaluators, we first independently generated an initial list of tasks users perform on web3 DApps. After comparison and discussion, we excluded one-time tasks (such as installing MetaMask) and tasks that are common with Bitcoin wallets, which have been thoroughly studied. Our final list of core tasks are:
 
 \begin{enumerate}
     \item [T1.] Connect MetaMask wallet to a given DApp website. %preferred wallet (MetaMask) to a given DApp website.
@@ -259,12 +257,13 @@ We draw our guidelines directly from the established usable security literature-
     \item[G8.] Users should be aware of the application’s status at all times. % keep users informed
 \end{enumerate}
 
-A walkthrough allows for an evaluation across a large number of DApps, in contrast to time-limited and costly user studies. During initial analysis, the two evaluators performed walkthroughs on different DApps to identify problematic areas and inform further walkthroughs of DApps in our full dataset.
+A walkthrough allows for an evaluation across a large number of DApps, in contrast to time-limited and costly user studies. During initial analysis, the two evaluators performed a walkthrough on one DApp (Uniswap) to identify problematic areas and inform further walkthroughs of DApps in our full dataset.
 %discussed the walkthrough procedure for two popular DApps (ENS and Uniswap). 
 %We settled on the above three core tasks because these are primary tasks that reflect typical user workflows of interaction with DApps and contracts.
 %If users are not fully informed during these core tasks, attackers can mislead users into granting access to their wallet data and assets.
 %For each core task, we analyzed the information displayed to users and evaluated if each interface satisfied the above guidelines, taking note of violations. 
-After refinement based on this analysis, the main researcher evaluated each of the top 50 DApps listed on \textit{DAppRadar},\footnote{\url{https://dappradar.com/}} ranked by the total value of assets held under the DApp's contract over a 30-day period (Nov 2024). We used the MetaMask wallet for these tasks.
+After refinement based on this analysis, the main researcher evaluated each of the top 50 DApps listed on \textit{DAppRadar},\footnote{\url{https://dappradar.com/}} ranked by the total value of assets held under the DApp's contract over a 30-day period (Nov 2024). 
+We used the MetaMask wallet for these tasks.
 %This list allows us to focus on the most popular Web3 services and identify opportunities for improvements.
 
 
@@ -324,7 +323,7 @@ After refinement based on this analysis, the main researcher evaluated each of t
 
 \subsection{A Sample Walkthrough}
 
-For space considerations, we do not present the full details of each walkthrough of 4 tasks over 50 DApps. Instead, we present one representative sample walkthrough to illustrate what the methodology looks like, and then we present our overall results, based on all walkthroughs, in the next section.
+For space considerations, we do not present the full details of each walkthrough of 4 tasks over 50 DApps however we have made all walkthroughs publicly available.\footnote{GitHub: link removed for anonymity, can distribute via program chairs as needed.} Here we present one representative sample walkthrough to illustrate what the methodology looks like.
 The sample is the (T3) transaction approval task in the DApp Uniswap~\cite{uniswap}, a decentralized exchange service on Ethereum allowing users to exchange one type of (ERC-20) token for another.
 We assume the persona of a typical web3 user who owns one or more tokens, uses a common wallet such as MetaMask, and has basic understanding about Ethereum tokens and transactions.
 For this task, we also assume the user has already connected their wallet to Uniswap (T1) and successfully switched to a target network (T2). % exchange ETH to Tether USD on Base
@@ -374,11 +373,11 @@ The DApp/wallet interface can address these issues by explaining transaction fai
 % the prompt does not provide information about risks 
 
 \subsection{Limitations}
-Our findings cover 50 popular DApps with MetaMask which may not be representative of other DApps and wallets.
-We also do not cover mobile wallets and DApps accessed through mobile browsers. % involved wallets and DApps used on a desktop web browser.  
+DApps that are not compatible with MetaMask are excluded from our study, and we study only MetaMask as a browser extension, not the mobile wallet variant. 
+We were conscious of the fact that the rankings on \textit{DAppRadar} are known to be manipulated by bots, however, in this case, we wanted to study a wide spectrum of DApps including ones that are new, less known, and even fraudulent or malicious. 
 We evaluated a set of four core tasks which does not cover other tasks users might perform on DApps, such as connecting with other users on social DApps.
 % For example, users may use DApps to connect with other users in web3 games.
-Finally, our expert evaluations may not accurately represent users' behavior in practice. % uncover all usability issues faced by typical users.
+Finally, our expert evaluations may not accurately represent users' behaviour in practice. % uncover all usability issues faced by typical users.
 Our evaluations still uncover important usability issues that carry significant security and privacy implications for users.
 % this first look usability evaluation aims to identify high-priority
 % We particularly focused on violations that may lead to dangerous errors (G5) that likely carry significant security and privacy implications.
