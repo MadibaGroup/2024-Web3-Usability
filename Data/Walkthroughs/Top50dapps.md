@@ -13,7 +13,7 @@ Start with top 50 DApps listed on `DAppradar.com`, ranked by the total value of 
 ||                      ***DAPP INDICATORS*** |
 | dapps showing connected wallet | 48/50      |
 | add ntw prompts w "this site"  | 45/45      |
-| MetaMask cues indicating site  | 9          |
+| MetaMask cues indicating site  | 7          |
 ||                       ***SWITCH NETWORK*** |
 | add ntw prmpts w yllw cautions | 28/45      |
 | add ntw prmpts w red warnings  | 15/45      |
@@ -105,6 +105,4 @@ Start with top 50 DApps listed on `DAppradar.com`, ranked by the total value of 
 ![favicon + url](image-3.png)
 ![favicon + url (pill-shape)](image-4.png)
 ![url + empty favicon](image-5.png)
-![url listed in a congested interface](image-6.png)
-![url in sign msg request](image-7.png)
-![wallet](image-93.png)
+![url listed in a congested interface](image-6.png) <!-- ![url in sign msg request](image-7.png) --> <!-- ![wallet](Second%20Group/image-93.png) -->
