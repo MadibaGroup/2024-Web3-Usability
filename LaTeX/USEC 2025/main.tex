@@ -103,8 +103,9 @@
 %
 \begin{abstract}
 % The abstract should briefly summarize the contents of the paper in 150--250 words.
-While the usability literature has considered both web 2.0 web services, as well as cypto-currencies like Bitcoin, web3 is more than the sum of these parts. Web3 decentralized applications (DApps) deploy a unique model that creates new usability challenges and risks to user data and funds.
-This paper uses an expert evaluation method to identify usability challenges across 50 popular Ethereum DApps found `in the wild,' used alongside the popular wallet MetaMask.
+While the usability literature has considered both web 2.0 web services, as well as cypto-currencies like Bitcoin, web3 is more than the sum of these parts. Web3 decentralized applications (DApps) deploy a unique model that creates new usability challenges, security risks to user funds, and privacy risks to user data.
+In this ``vision'' paper, we build a case that web3 needs attention from the usability community. 
+We report on a preliminary study, using an expert evaluation method, to identify usability challenges across 50 popular Ethereum DApps found `in the wild,' used alongside the popular wallet MetaMask.
 Our evaluation uncovers four common usability challenges impacting users' ability to make informed decisions, and points to opportunities for future user studies and areas for improvement.
 % \keywords{First keyword  \and Second keyword \and Another keyword.}
 \end{abstract}
@@ -113,15 +114,30 @@ Our evaluation uncovers four common usability challenges impacting users' abilit
 %
 \section{Introduction}
 
+When Ethereum introduced its vision for smart contracts that can be executed on a blockchain, user interfaces had to be rethought. In contrast to Bitcoin, Ethereum users are no longer merely making payments to a receiving address; they are interacting in arbitrary ways with decentralized applications (DApps) to perform more complex tasks like trading assets, establishing loans, bidding in auctions, and registering domain names. Furthermore, new DApps emerge too frequently for standalone wallet software to be customized for specific DApps. The idea that users might transact with smart contracts in a `raw' way, by manually supplying a contract address, function to be run, and parameters to the function, was an obvious non-starter for non-expert users. 
 
+\subsection{A Tangled Web3}
 
-When Ethereum introduced smart contracts that can be executed on a blockchain, user interfaces had to be rethought. Ethereum users are no longer merely making payments to a receiving address, they are interacting in arbitrary ways with decentralized applications (DApps) to perform more complex tasks like trading assets, establishing loans, bidding in auctions, and registering domain names. Furthermore, new DApps emerge too frequently for standalone wallet software---the kind that dominates the Bitcoin ecosystem---to stay updated. The idea that users might transact with smart contracts in a `raw' way, by manually supplying a contract address, function to be run, and parameters to the function, was an obvious non-starter for non-expert users. 
+\begin{figure}[tb]
+\centering
+    \includegraphics[width=0.47\textwidth]{web3-architecture.pdf}
+    \caption{Overview of four core tasks in web3. 
+    In task 1 (T1), the user selects ``connect wallet'' on the DApp \protect\TONE{1} which requests the user's account address \protect\TONE{2}; the wallet obtains user approval \protect\TONE{3} and returns the address \protect\TONE{4}.
+    In T2, the user selects a blockchain network on the DApp \protect\TTWODASHED{1} which triggers the wallet \protect\TTWODASHED{2} to prompt the user to switch network \protect\TTWO{3}; alternatively, the user can directly switch network on the wallet.
+    In T3, the user initiates a transaction on the DApp \protect\TTHREE{1} which sends it to the wallet \protect\TTHREE{2}; the wallet prompts the user for approval \protect\TTHREE{3} and if approved, the wallet sends its proof to an Ethereum node via JSON-RPC APIs \protect\TTHREE{4} which is then broadcast to the Ethereum network \protect\TTHREE{5}; alternatively, the proofs could be routed through the DApp \protect\TTHREEDASHED{4a} before reaching the network \protect\TTHREEDASHED{4b}.
+    In T4, the user selects ``disconnect wallet'' on the DApp \protect\TFOUR{1} which asks the wallet to revoke its permissions \protect\TFOUR{2}; alternatively, the user can directly disconnect on the wallet \protect\TFOURDASHED{1}.}
 
-The solution is what we now call web3 (see Figure~\ref{figWeb3Architecture}). A DApp augments the smart contract with a companion website, accessible over the standard internet, which provides a user interface and mostly abstracts away the technical details of the contract. The connection between the website and the blockchain is convoluted however, hence the need for a usability analysis. Websites typically pass scripts to the user and the website, now running client-side, will interact with third party APIs to fetch up-to-date blockchain data that is general to all users. To customize the content for the specific user, the website does not maintain accounts server-side for its users, as in web 2.0. Instead the user is expected to run a standalone client, called a wallet (as in Bitcoin). After authorization, the wallet will supply the user's addresses to the website, and the website can propose blockchain actions to the wallet to present to the user for signature. 
+    % using standard wallet API~\cite{providerAPI}
+    
+    % When a user connects their wallet to a DApp (1), the DApp's Javascript code sends a 
+    % When the user initiates each task on the DApp, the DApp's code sends a request to the wallet using standard APIs~\cite{providerAPI} (\textit{eth\_requestAccounts} and \textit{eth\_sendTransaction}) or wallet-specifc
+    % uses the \textit{Ethereum Provider API}~\cite{providerAPI} to
+    \label{figWeb3Architecture}
+\end{figure}
+
+The solution is what we now call web3 (see Figure~\ref{figWeb3Architecture}). A DApp augments the smart contract with a companion website, accessible over the standard internet, which provides a user interface and mostly abstracts away the technical details of the contract. The connection between the website and the blockchain is convoluted however, hence the need for a usability analysis. Websites typically pass scripts to the user and the website, now running client-side, will interact with third party APIs to fetch up-to-date blockchain data that is general to all users. To customize the content for the specific user, the website does not maintain accounts server-side for its users, as in web 2.0. Instead the user is expected to run a standalone client, called a wallet (\textit{e.g.,} MetaMask). After authorization, the wallet will supply the user's addresses to the website, and the website can propose blockchain actions to the wallet to present to the user for signature. 
 
 In summary, (i) users interact with a website first, rather than their wallet; (ii) after user authorization, the website and wallet can pass data between them; (iii) the wallet is agnostic about what the DApp is or does; (iv) all authorizations are done by the user in the wallet software; and (v) users will be asked to sign transactions in their wallet that they, and the wallet itself, will not `understand,' instead relying on the trustworthiness of the website proposing the transaction.
-
-
 
 % the role of wallets in web3; what's at stake for users; how current design aims to help users; how can this be improved;
 %The Web3 ecosystem is onboarding an increasing number of users~\cite{dappradar2024Q2}, who use wallets frequently to interact with Decentralized Apps (DApps). %and grant approvals to transact on their behalf. %and share addresses and grant approval.
@@ -129,26 +145,21 @@ In summary, (i) users interact with a website first, rather than their wallet; (
 %Current interfaces try to mitigate these risks by displaying warnings to users when they are prompted to grant permissions.
 %Despite such measures, many security concerns related to uninformed approvals exist in DApps~\cite{si2024understanding,torres2023your}.
 
-Our work investigates usability challenges in popular DApp and wallet interfaces.
-Malicious DApps exploit the complex arrangement between users, DApps, and wallets, attempting to deceive users into granting permissions to their data and access to their funds~\cite{si2024understanding,torres2023your}.
-Web3 wallets inform users about such attempts by including warnings in the prompts that request users to authorize data access and transactions.
-Despite these warnings, recent attacks~\cite{toulas2024lottiefiles,vismaya2024pepe,zmudzinski2024Eigenlayer} show that attackers continue to trick users into approving malicious wallet prompts that result in loss of funds.
-While existing usable security research on web3 has focused on understanding users' mental models~\cite{si2024understanding,panicker2024end} and extracting security-related information about contracts~\cite{hu2021automating}, usability of web3 DApp and wallet prompts remains largely unexplored.
+\subsection{Literature Review}
 
-Before deploying full-blown user studies, expert review is used as a starting point to identify key areas requiring attention. 
-In this vision paper, we perform this first step, setting a research agenda for more detailed follow-up work. To this end, our contributions include:
+Web3 is a security-usability subject as malicious DApps exploit the complex architecture of web3 to deceive users into granting permissions to their data and steal any funds they own through their web3 wallet~\cite{si2024understanding,torres2023your}.
+Web3 wallets inform users about fraud with warnings and prompts, but recent attacks~\cite{toulas2024lottiefiles,vismaya2024pepe,zmudzinski2024Eigenlayer} show that attacks continue to work.
 
-\begin{enumerate}
-\item An expert review of the top 50 DApps using an established methodology called a cognitive walkthrough~\cite{wharton1994cognitive}.
-\item Explication of four high-priority usability challenges in current interfaces based on our evaluations. 
-\item Discussions of potential interface improvements to address these usability challenges to limit user errors and better inform users about permissions granted to DApps.
-\end{enumerate}
+Starting at USEC 2018~\cite{eskandari2018first}, numerous studies on Bitcoin usability have been conducted~\cite{gao2016of,krombholz2017the,mai2020user,sas2017design}, as well as generic blockchain technology~\cite{frohlich2022blockchain,jang2022userExperience,jang2020userPerspectives}, with one focus on wallet software~\cite{voskobojnikov2021u} finding misinformed mental models due to an over-reliance on understanding of traditional web 2.0 systems. However we have argued web3 is more complex than a simple merge of Bitcoin concepts with web 2.0 concepts.
+
+For Web3 specifically, we only found two relevant studies. Panicker et al.~\cite{panicker2024end} focus on token transfers, which is the most Bitcoin-esque subset of web3, and does not explore DApps. At CHI 2024, Si et al.~\cite{si2024understanding} focused on user perceptions, utilizing interviews with participants, and finding concerns about vulnerable contracts, social engineering attacks, and other types of fraud.
+
+\subsection{Research Gap and Vision}
+
+The ``vision'' of our paper is to draw attention to DApps themselves and the wallet software used to interact with them, examining the interfaces, prompts, and cues which guide users through security- and privacy-sensitive tasks, looking for usability pitfalls that can lead users to make dangerous errors. To build a case that this is worth attention, we conduct a preliminary study. We identify 50 DApps `in the wild' and conduct a cognitive walkthrough~\cite{wharton1994cognitive} of four core tasks with each DApp. After reviewing our findings, we identify four high-priority usability challenges in current interfaces based on our evaluations, and set forward a research agenda for exploring them in future studies. 
 
 \section{Background}
 % Web3 security; wallet interaction; usability;
-
-
-
 
 In web 2.0, apps are designed with a front-end website associated with a centralized back-end server and maintained by the website owner.
 Web3 redesigns this structure by replacing centralized services with a blockchain---a network of anonymous validators that store and run programs in exchange for financial rewards (referred to as ``gas'' fees).\footnote{In practice, much of web3 traffic relies on services resembling centralization (cf.~\cite{williams2020infura})}
@@ -179,22 +190,7 @@ These blockchains, also referred to as \textit{sidechains} and \textit{Layer 2} 
 % Every \ac*{EVM} network can be described using its chain ID (unique identifier for the blockchain) and the \ac*{RPC} \ac*{URL} (address of the remote server which acts as the gateway for the DApp to access the blockchain nodes).
 Many DApps integrate with multiple chains to support transactions across the ecosystem.
 
-\begin{figure}[tb]
-\centering
-    \includegraphics[width=0.47\textwidth]{web3-architecture.pdf}
-    \caption{Overview of web3 architecture and user flow for four common tasks. 
-    In T1, the user selects ``connect wallet'' on the DApp \protect\TONE{1} which requests the user's account address \protect\TONE{2}; the wallet obtains user approval \protect\TONE{3} and returns the address \protect\TONE{4}.
-    In T2, the user selects a blockchain network on the DApp \protect\TTWODASHED{1} which triggers the wallet \protect\TTWODASHED{2} to prompt the user to switch network \protect\TTWO{3}; alternatively, the user can directly switch network on the wallet.
-    In T3, the user initiates a transaction on the DApp \protect\TTHREE{1} which sends it to the wallet \protect\TTHREE{2}; the wallet prompts the user for approval \protect\TTHREE{3} and if approved, the wallet sends its proof to an Ethereum node via JSON-RPC APIs \protect\TTHREE{4} which is then broadcast to the Ethereum network \protect\TTHREE{5}; alternatively, the proofs could be routed through the DApp \protect\TTHREEDASHED{4a} before reaching the network \protect\TTHREEDASHED{4b}.
-    In T4, the user selects ``disconnect wallet'' on the DApp \protect\TFOUR{1} which asks the wallet to revoke its permissions \protect\TFOUR{2}; alternatively, the user can directly disconnect on the wallet \protect\TFOURDASHED{1}.}
 
-    % using standard wallet API~\cite{providerAPI}
-    
-    % When a user connects their wallet to a DApp (1), the DApp's Javascript code sends a 
-    % When the user initiates each task on the DApp, the DApp's code sends a request to the wallet using standard APIs~\cite{providerAPI} (\textit{eth\_requestAccounts} and \textit{eth\_sendTransaction}) or wallet-specifc
-    % uses the \textit{Ethereum Provider API}~\cite{providerAPI} to
-    \label{figWeb3Architecture}
-\end{figure}
 
 \subsection{RPC endpoints}
 \label{sec:background:rpc}
@@ -206,14 +202,10 @@ For instance, MetaMask relies on Infura as its default endpoint~\cite{metamaskIn
 These endpoints relate to different privacy implications, e.g., some providers maintain logs of user data transmitted through their servers while others state that they do not collect any user data.
 Thus, it is important for users to choose endpoints that align with their privacy preferences.
 
-\section{Related work}
+%\section{Related work}
 % Many previous studies have explored security risks and usability of individual applications.
 
-The usability literature has explored Bitcoin~\cite{eskandari2018first,gao2016of,krombholz2017the,mai2020user,sas2017design} and generic blockchain technology~\cite{frohlich2022blockchain,jang2022userExperience,jang2020userPerspectives}. In terms of Ethereum, web3, and wallets such as MetaMask, the literature has focused on user perceptions. 
-Panicker et al.~\cite{panicker2024end} found that users do not fully comprehend risks involved in token transfers in MetaMask UIs due to a lack of information about outcomes.
-Analyzing app reviews of mobile wallets, Voskobojnikov et al.~\cite{voskobojnikov2021u} observed misinformed mental models due to an overreliance on understanding of traditional web 2.0 systems.
-Si et al.~\cite{si2024understanding} explored user interactions and risk perceptions across the Web3 ecosystem, finding user concerns about vulnerable contracts and social engineering attacks involving inadvertent approvals.
-By contrast, our study learns through direct interaction with a broad set of popular DApps `in the wild.'
+
 % Usability studies:
 % - usability testing of a single DApp~\cite{jang2020userPerspectives};
 % - evaluation framework for user study of blockchain systems~\cite{jang2022userExperience};
