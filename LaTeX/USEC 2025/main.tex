@@ -421,14 +421,14 @@ Our evaluations still uncover important usability issues that carry significant 
 
 % = = = = = = = = = = = = = = = = = =  = = = = = = = = =
 
-\section{High Priority Usability Issues}
+\section{Research Agenda}
 \label{sec:results:topIssues}
 
-We now present the highest priority issues we found during our walkthroughs of 50 DApps, focusing on issues that may lead users to make dangerous errors (G5). We would direct future research efforts to consider these issues.
+We now present the highest priority usability issues we found during our walkthroughs of 50 DApps, focusing on issues that may lead users to make dangerous errors (G5). We would direct future research efforts to consider these issues.
 
 % = = = = = = = = = = = = = = = = = =  = = = = = = = = =
 
-\subsection{Issue 1: Weak link between wallet prompts and DApps}
+\subsection{Issue 1: User interfaces, indicators, and prompts}
 
 Users can have multiple DApp websites open at once, while the wallet is a singular and separate interface. We found MetaMask attempts to associate prompts with its originating DApp by displaying domain names, however it is inconsistent.
 In 100\% of the ($n=45$) prompts for adding a network (Fig.~\ref{figAddNetwork}), we found that the wallet did not link prompts to websites: \textit{e.g.,} `allow \textit{this site} to add a network?' Connecting to a malicious network compromises the user's privacy (links user's IP address and wallet addresses), displays information about the state of the blockchain, and can propose fraudulent transactions (timed to follow specific user actions). In other cases, the domain is shown but the visual cue varies (boxed/rounded/unboxed; domain/url/favicon; sizes/colors/locations); overall, we found six variations (shown in Fig.~\ref{figDappIndicators}) in how the wallet displays the domains.
@@ -461,7 +461,7 @@ Transactions can also queue, say if a user forgets to sign/cancel a transaction 
 %this forces the user to complete (or reject) it before displaying the new transaction.
 %Although MetaMask indicates the number of current requests in the extension icon, the design raises concerns about possible confusion between the user's assumption about the requesting DApp and the actual DApp being granted approval.
 
-\subsubsection*{\textbf{Recommendation}}
+\subsubsection*{\textbf{Future Work}}
 %Standard usable security guidelines~\cite{whitten1999johnny,clark2007usability} suggest interface design that prevents users from making dangerous errors.
 %Thus in the context of DApps, it is important for users to easily associate wallet prompts to the originating DApp.
 A previous paper~\cite{gallersdorfer2021augmenting} introduces TLS-based authentication of contracts and proposes augmenting MetaMask with warnings (similar to web 2.0 browser certificates), though MetaMask has not included such proposals.
@@ -513,7 +513,7 @@ However, users may become desensitized to security warnings especially when they
 % Users may become desensitized to frequent security warnings and false alarms, as found in previous studies on security indicators in Web2 apps (e.g.,~\cite{krol2012Dont}).
 % In web3, the current wallet design of prompting users to re-add blockchains and showing excessive number of warnings may be ineffective.
 
-\subsubsection*{\textbf{Recommendation}}
+\subsubsection*{\textbf{Future Work}}
 When adding a network, users should be made aware of alternative providers who may offer better security and privacy.
 To this end, when adding networks via DApps, wallets can simply display an option to change the provider before adding to the wallet.
 It is important for users to be informed about available choices before they make a decision since adding a network to the wallet immediately exposes personal information such as user's IP address and wallet addresses (which can then be linked to past transactions, compromising privacy).
@@ -586,7 +586,7 @@ Another line of research focuses on security tools (e.g.,~\cite{kalra2018zeus,ts
 % OPTION2: better to do nothing because if might give a false sense of security 
 
 % Recommendation -- Unverified contracts should be more prominent (e.g., using different color); use of allow lists?; other proposed solutions
-\subsubsection*{\textbf{Recommendation}}
+\subsubsection*{\textbf{Future Work}}
 % It is important for wallet interfaces to inform users about contracts before they approve transactions.
 Wallets should use a standard interface design to inform users about contract risks.
 When interfaces includes predictions about balance changes, it should clearly warn users about the lack of validation about the contract to prevent false trust assumptions.
@@ -595,7 +595,7 @@ Future research can determine the extent to which malicious behavior can be pred
 
 % = = = = = = = = = = = = = = = = = =  = = = = = = = = =
 
-\subsection{Issue 4: Concerns with \textit{Allowance} mechanism}
+\subsection{Issue 4: Concerns with revocation}
 % look into RAID 2022 paper https://dl.acm.org/doi/pdf/10.1145/3545948.3545963
 %- unlimited approval is prevalent (based on public transactions data), likely due to many DApps requesting unlimited approval and not all wallets allow changing the amount.
 %- unlimited approval involves big security risk since (1) the DApp may be malicious/hacked, and (2) the DApp may be honest but vulnerable contract may be exploited by attackers to steal approved funds
@@ -631,7 +631,7 @@ Many DApps provide no option to adjust the approval amount, while some have been
 % Issues -- Unsafe default as the spending cap is set by the DApp and is often set to max (unlimited) value.
 % wallet shows this value and allows the user to change it, but it's not a safe default.
 
-\subsubsection*{\textbf{Recommendation}}
+\subsubsection*{\textbf{Future Work}}
 Attention has been given to allowing users to view, modify, and revoke past approvals, both in the MetaMask dashboard and through third-party tools (e.g., \url{revoke.cash}~\cite{revokeCash}). Because of the ERC20 standard, wallets should recognize an unlimited approval and better warn users, schedule a reminder prompt to revoke for a later time, or allow users to set global limits (with sensible default values) on allowances.
 
 %TWhile there is a lack of mechanisms to prevent users from making unsafe approvals, there exists options for users to reduce or fully revoke already approved allowances.
