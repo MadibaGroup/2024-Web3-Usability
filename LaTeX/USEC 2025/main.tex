@@ -349,16 +349,15 @@ Although these warnings aim to alert users about potential scams, conflicting cu
 %\includegraphics[width=\0.5columnwidth]{uniswap-trx-prompt}
 %\end{figure}
 
-Uniswap triggers a wallet prompt with details about the transaction. %and prompts for user approval.
+Uniswap triggers a complex prompt from MetaMask with details about the transaction, split into 7 subpanels. %and prompts for user approval.
 At the top of the prompt, a small icon beside the contract address displays a generic message prompting users to verify before trusting the contract.
 This violates G2 as there is no guidance on how to verify.
 The prompt also includes a section with predictions about the resulting balance changes, however this is not guaranteed as indicated within an icon.
 We discuss this issue further in Sec.~\ref{sec:results:contracts}.
-The prompt summarizes the source and destination addresses in abbreviated form, which varies depending on the width of the extension window (\texttt{0xCb135\ldots 5D\ldots}).
+The prompt summarizes the source and destination addresses in abbreviated form, which varies depending on the width of the extension window (\textit{e.g.,} \texttt{0xCb135\ldots 5D\ldots}), and the prompt muddles together source information (such as balances) with destination information (such as addresses). 
 
-The prompt also includes estimated gas fees and an option to set a limit on the maximum fee.
+The prompt also includes estimated `gas' fees which is Ethereum's system for paying for transaction execution. Option to set a limit on the maximum fee.
 This option (in a secondary prompt) lists four choices with different limits and processing times (options with lower fees tradeoff on longer wait times).
-
 After selecting ``low'' gas and submitting the transaction,
 the wallet notified that the transaction had failed without any description.
 An external link from the wallet showed the error output directly from the contract, however this message is ambiguous with no recovery instructions.
