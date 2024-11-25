@@ -29,6 +29,7 @@
 \usepackage{tikz}
 \usepackage{url}
 \usepackage{subfig}
+\usepackage{subcaption}
 \usepackage{hyperref}
 \makeglossaries
 \input{acronyms} %%file that has all the acronyms
@@ -437,6 +438,7 @@ In 100\% of the ($n=45$) prompts for adding a network (Fig.~\ref{figAddNetwork})
 \subfloat[No DApp indicator]{
 	\label{figAddNetwork}
 	\includegraphics[width=.37\columnwidth]{screenshots/add-network-this-site}}
+\hfill
 \subfloat[Variations in DApp indicators]{
  	\label{figDappIndicators}
 	\includegraphics[width=.45\columnwidth]{screenshots/dapp-indicators}}
@@ -482,18 +484,30 @@ This manual process is also extensive as it involves verifying the individual de
 % Side note: there may be instances where a chainID is reused (e.g., deprecated chains)
 
 % Choosing an \ac*{RPC} provider is important since each provider offers different security and privacy benefits.
-There are three options for adding a new network on a MetaMask wallet, and each option may involve different privacy and security implications:
+There are three options for adding a new network on a MetaMask wallet, and each option may involve different usability and privacy and security implications:
 \begin{enumerate}
-    \item Users may add a new network from a DApp site (e.g., by initiating a transaction on the relevant blockchain) which would send the wallet network information including the DApp's preferred \ac*{RPC} provider. In this case, the wallet simply displays this information and prompts the user to add the network. This prompt does not allow the user to select a different (e.g., more privacy-friendly) \ac*{RPC}, or even indicate the possibility of changing providers. Thus, users may consent to using the displayed network though they may not be fully informed or even aware of more privacy-friendly choices. %If the user approves, it is assumed that they have consented (although they may not be fully informed) to the provider's privacy policies. 
+    \item Users may add a new network from a DApp site (e.g., by initiating a transaction on the relevant blockchain) which would send the wallet network information including the DApp's preferred \ac*{RPC} provider (as shown in Fig.~\ref{figAddNetworkWarnings}). In this case, the wallet prioritizes simplicity and prompts the user to add the network specified by the DApp. This prompt does not allow the user to select a different (e.g., more privacy-friendly) \ac*{RPC}, or even indicate the possibility of changing providers. Thus, users may consent to using the displayed network though they may not be fully informed or even aware of more privacy-friendly choices. %If the user approves, it is assumed that they have consented (although they may not be fully informed) to the provider's privacy policies. 
 
     \item Second, for a small subset of (popular) networks~\cite{metamaskAddCustomNetwork}, users can add the network automatically from the MetaMask interface using suggested providers (e.g., a related entity---see Sect.~\ref{sec:background:rpc}). %; the UI in this option warns about privacy issues in networks that include tracking.
-    Wallets may be able to inform users about potential security and privacy issues with network providers, however, this may be possible only for a limited number of networks. %e.g., those managed by the wallet itself (see Sect.~\ref{sec:background:rpc}). %and unlikely to cover all network providers.
+    Wallets may be able to inform users about potential security and privacy issues with specific network providers, however, this may be possible only for a limited number of networks. %e.g., those managed by the wallet itself (see Sect.~\ref{sec:background:rpc}). %and unlikely to cover all network providers.
 
-    \item Third, users can add a network on their wallet by manually configuring the network such as their preferred \ac*{RPC}. Although this option offers the most control to users, it may not be straightforward to identify legitimate network providers that are trustworthy. %secure and private.
+    \item Third, users can add a network on their wallet by manually configuring the network such as their preferred \ac*{RPC} (Fig.~\ref{figAddCustomNetwork}). Although this option offers the most control to users, it may not be straightforward to identify legitimate network providers that are trustworthy. %secure and private.
 \end{enumerate}
 
+\begin{figure}[tb]
+\centering
+\subfloat[Add network prompt prioritizing simplicity over security.]{ %Challenging to verify the security of new networks. %A typical prompt for adding a new network involves a complicated process to verify its security. 
+	\label{figAddNetworkWarnings}
+	\includegraphics[width=.4\columnwidth]{screenshots/add-network-warnings}}
+\hfill
+\subfloat[Add network prompt sacrificing usability for security.]{
+ 	\label{figAddCustomNetwork}
+	\includegraphics[width=.38\columnwidth]{screenshots/add-custom-network}}
+\caption{Challenges in adding a new network to the wallet.}
+\end{figure}
+
 These issues complicate the process of configuring networks by requiring users to perform multiple out-of-band checks (i.e., breaks the user's workflow for the task by involving external resources and ad-hoc web searches).
-MetaMask prompts include warnings when any the network information (e.g., name, RPC URL, or currency) provided by the DApp does not match its own records; 62\% of the 45 prompts we reviewed included at least one warning about networks.
+MetaMask prompts include warnings (as in Fig.~\ref{figAddNetworkWarnings}) when the network information (e.g., name, RPC URL, or currency) provided by the DApp does not match its own records; 62\% of the 45 prompts we reviewed included at least one warning about networks.
 However, users may become desensitized to security warnings especially when they are frequently linked to false alarms~\cite{krol2012Dont}.
 % Asking users to re-validate information about networks already in their wallet and showing excessive number of warnings (e.g., when a DApp uses a different network name despite not affecting security) may lead 
 % Users may become desensitized to frequent security warnings and false alarms, as found in previous studies on security indicators in Web2 apps (e.g.,~\cite{krol2012Dont}).
@@ -520,8 +534,8 @@ To further support informed user decisions, DApps and wallets could list more th
 % It is important to provide users with information about the contracts they interact with to help mitigate these risks.
 % However, users are not provided with information about contracts to inform about these risks.
 %During our analysis, we observed interfaces to be often lacking useful information about the risks of triggering contracts. %with partially useful information about contracts, however these were often incomplete or limited to certain transactions.
-When prompting for a transaction approval, MetaMask includes predicted changes to the user's balances (i.e., estimated amount ``sent'' and amount ``received'') for recognized tokens and blockchains~\cite{metamaskEstimatedChanges}.
-Among 40 transaction prompts, we found 25 prompts (62\%) with predictions on received tokens.
+When prompting for a transaction approval, MetaMask includes predicted changes (Fig.~\ref{figTrxPredictions}) to the user's balances (i.e., estimated amount ``sent'' and amount ``received'') for recognized tokens and blockchains~\cite{metamaskEstimatedChanges}.
+Among 40 transaction prompts, we found 25 prompts (63\%) with predictions on received tokens.
 % This feature~\cite{metamaskEstimatedChanges} involves sending transaction data to the wallet's server, which raises privacy concerns.
 % In addition to accuracy concerns, 
 % These predictions might lead to misplaced trust on DApps as some users might falsely believe that they would be receiving tokens, i.e.,  
@@ -543,6 +557,24 @@ Solidity, the primary language for contracts, provides developers the ability to
 However, most of the contracts in the wild do not include such comments~\cite{hu2021automating}.
 Automated generation of these comments could help fill this gap~\cite{hu2021automating} but such comments may not provide accurate descriptions of contracts and may lead some users into a false sense of security about contract behavior.
 Another line of research focuses on security tools (e.g.,~\cite{kalra2018zeus,tsankov2018security}) to identify vulnerable contracts, however informing users about these issues (e.g., in end-user interfaces) remains an open challenge.
+
+\begin{figure}[tb]
+\centering
+\begin{minipage}{0.48\columnwidth}
+	\centering
+	\includegraphics[width=0.8\columnwidth]{screenshots/trx-predicted-changes}
+	\caption{Transaction predictions by wallet.}
+	\label{figTrxPredictions}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\columnwidth}
+	\centering
+	\includegraphics[width=0.6\columnwidth]{screenshots/unlimited-approval}
+	\caption{DApp request for unlimited approval.}
+	\label{figUnlimitedApproval}
+\end{minipage}
+%\caption{Challenges in adding a new network to the wallet.}
+\end{figure}
 
 % Although there are proposals and implementations that could help inform, we observe a lack of standard design that 
 
@@ -572,7 +604,7 @@ Tokens deployed on Ethereum follow standard interfaces, such as ERC20, meaning w
 The ERC20 standard requires an `approve' function. Instead of Alice sending 10 tokens to Bob, she can approve Bob to take 10 tokens from her at any time until she removes the approval. 
 Many DApps move tokens through approvals rather than transfers.
 
-Prioritizing simplicity and flexibility over security, 18 of 29 DApps (62\%) in our study request \textit{unlimited} approvals.
+Prioritizing simplicity and flexibility over security, 18 of 29 DApps (62\%) in our study request \textit{unlimited} approvals; Fig.~\ref{figUnlimitedApproval} shows an example request.
 Similarly, Wang \textit{et al}~\cite{wang2022penny} found 60\% of DApps requesting unlimited approvals.
 %60\% of DApps in \cite{wang2022penny} request \textit{unlimited} approvals. 
 Unlimited approvals are problematic when a DApp is later compromised (or malicious to begin with)~\cite{incident2020Bancor,incident2021Primitive}.
