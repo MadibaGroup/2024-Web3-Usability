@@ -679,25 +679,116 @@ Attention has been given to allowing users to view, modify, and revoke past appr
 %
 \bibliographystyle{IEEEtran}
 \bibliography{bib}
-%
-% \begin{thebibliography}{8}
-% \bibitem{ref_article1}
-% Author, F.: Article title. Journal \textbf{2}(5), 99--110 (2016)
 
-% \bibitem{ref_lncs1}
-% Author, F., Author, S.: Title of a proceedings paper. In: Editor,
-% F., Editor, S. (eds.) CONFERENCE 2016, LNCS, vol. 9999, pp. 1--13.
-% Springer, Heidelberg (2016). \doi{10.10007/1234567890}
+\appendix
 
-% \bibitem{ref_book1}
-% Author, F., Author, S., Author, T.: Book title. 2nd edn. Publisher,
-% Location (1999)
+\subsection{Selection of Core Tasks}
+We make the following assumptions about the user during our walkthroughs:
+\begin{itemize}
+	\item Technical awareness:
+	\begin{itemize}
+		\item  Comfortable with web 2.0, smartphone apps, browser extensions, browsers
+	\end{itemize}
+	\item Blockchain-specific awareness:
+	\begin{itemize}
+ 		\item A wallet contains tokens (or an address that owns tokens)
+  		\item Tokens are digital things of value that can be transacted and wallet tracks the "balance"
+		\item Transactions are approved by wallet
+  		\item Approval tied to some secret value (key, seed phrases) which is "in" the wallet
+  		\item Where the Bitcoin usability literature leaves off
+	\end{itemize}
+ 	\item Study specific assumptions:
+	\begin{itemize}
+		\item Always connect from mainnet Ethereum 
+	\end{itemize}
+\end{itemize}
 
-% \bibitem{ref_proc1}
-% Author, A.-B.: Contribution title. In: 9th International Proceedings
-% on Proceedings, pp. 1--2. Publisher, Location (2010)
+\vspace{1em}
+\noindent
+Our initial list of tasks included:
+\begin{itemize}
+	\item Installing and configuring MetaMask the software
+		\begin{itemize}
+			\item Not part of our study, common to all web3 DApps
+		\end{itemize}
 
-% \bibitem{ref_url1}
-% LNCS Homepage, \url{http://www.springer.com/lncs}, last accessed 2023/10/25
-% \end{thebibliography}
+	\item Configuring MetaMask to have an address to receive tokens
+		\begin{itemize}
+  			\item Not part of our study, common to all web3 DApps
+  			\item Assume user has default settings (address on L1 Ethereum with balance 0)
+		\end{itemize}
+
+	\item Funding the wallet with ETH (for gas costs) and other tokens as necessary
+		\begin{itemize}
+  			\item Not part of our study, common to all web3 DApps
+  			\item Tricky because of different networks: a future user study could explore Ethereum fragmentation into sidechains and L2s
+		\end{itemize}
+
+	\item Visit a Web3 website and confirm site corresponds to intended website:
+		\begin{itemize}
+  			\item Not part of our study, common to all web3 DApps
+  			\item Phishing studies have been conducted on web 2.0 that are relevant to this. 
+		\end{itemize}
+
+	\item Proceed to connect wallet to website with a practical mental model (G1-G3) of what connecting means, why the process is what it is (different web3 apps might use different processes), understanding and avoiding risks (G4-G5), and confirming connection is successful (G3) (via the website and via MetaMask).
+		\begin{itemize}
+  			\item Core task
+		\end{itemize}
+
+	\item Configure wallet to connect to a desired blockchain network (if it is not already on this network). This network has to be supported by the DApp to perform transactions. The supported networks may be different on each DApp. 
+		\begin{itemize}
+  			\item Core task
+  			\item Might be subsumed by another task
+		\end{itemize}
+
+	\item Conduct an operation on the web3 site that does not require wallet approval
+		\begin{itemize}
+  			\item Not a core task for our study as it does not involve the wallet by definition
+		\end{itemize}
+
+	\item Conduct an operation of the web3 site that does require wallet approval, configure and sign the transaction, understand and avoid risks. Covers token balances, gas fees, approvals, signature, confirming transaction, etc.
+		\begin{itemize}
+  			\item Core task
+		\end{itemize} 
+
+	\item Revert, to the extent possible, any past interactions with the DApp. Disconnect the wallet, unapprove tokens, etc.
+		\begin{itemize}
+ 			\item Core task 
+		\end{itemize}
+\end{itemize}
+
+\vspace{1em}
+\noindent
+Our list of Core Tasks included the following:
+\begin{enumerate}
+	\item[T1.] Proceed to connect wallet to website with a practical mental model (G1-G3) of what connecting means, why the process is what it is (different web3 apps might use different processes), understanding and avoiding risks (G4-G5), and confirming connection is successful (G3) (via the website and via MetaMask).
+
+	\item[T2.] Configure wallet to connect to a desired blockchain network (if it is not already on this network). This network has to be supported by the DApp to perform transactions. The supported networks may be different on each DApp. 
+	\begin{itemize}
+		\item Might be subsumed by T1 or T3.
+	\end{itemize}
+
+	\item[T3.] Conduct an operation of the web3 site that does require wallet approval, configure and sign the transaction, understand and avoid risks. Covers token balances, gas fees, approvals, signature, confirming transaction, etc.
+
+	\item[T4.] Revert, to the extent possible, any past interactions with the DApp. Disconnect the wallet, unapprove tokens, etc. 
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}
