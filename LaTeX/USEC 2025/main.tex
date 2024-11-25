@@ -439,7 +439,7 @@ In 100\% of the ($n=45$) prompts for adding a network (Fig.~\ref{figAddNetwork})
 
 Transactions can also queue, say if a user forgets to sign/cancel a transaction in MetaMask or clicks multiple times on the website. MetaMask indicates the number of current requests in the extension icon and a textual indicator in a small font size, but is easy to miss. Users, who have unknowingly queued a transaction and proceed to a new DApp where they take an action that creates a transaction, will be presented with the earlier queued transaction for signature first. 
 
-
+While these issues pertain to MetaMask interfaces, they relate to a more fundamental usability challenge to keep users informed about the connections between wallet prompts (in browser extensions) and the requesting DApps (in websites).
 
 %Many wallet permission prompts do not include visible cues to link the displayed prompt to the requesting DApp. For example, when the user is prompted to change the blockchain network on MetaMask, the permission prompt displayed by MetaMask does not indicate which DApp triggered this request.
 %The lack of a standard interface design connecting permission prompts to the requesting site increases the likelihood that users inadvertently approve requests by malicious actors (e.g., changing to a network controlled by an attacker). 
@@ -457,8 +457,9 @@ Transactions can also queue, say if a user forgets to sign/cancel a transaction 
 %Standard usable security guidelines~\cite{whitten1999johnny,clark2007usability} suggest interface design that prevents users from making dangerous errors.
 %Thus in the context of DApps, it is important for users to easily associate wallet prompts to the originating DApp.
 A previous paper~\cite{gallersdorfer2021augmenting} introduces TLS-based authentication of contracts and proposes augmenting MetaMask with warnings (similar to web 2.0 browser certificates), though MetaMask has not included such proposals.
-We recommend that the requesting DApp's URL is in every wallet prompt in a consistent UI component (i.e., location, format).
+We suggest that the requesting DApp's URL is in every wallet prompt in a consistent UI component (i.e., location, format).
 The wallet could also warn users when the requesting DApp is not in the current (in-focus) view, bring the requesting DApp's web page to in-focus view, or disable the approve button until the page is in focus to restrict inadvertent approvals.
+Future user studies could explore new interfaces to link prompts and DApps.
 %, e.g., by highlighting the mismatching URL in red font and offering an option to bring the requesting DApp's web page to in-focus view.
 % display prompts along with the web page that triggered the prompt by moving the window to in-focus view;
 %For certain DApps (such as those unverified by the wallet or visited by the user for the first time), the wallet could restrict approval 
@@ -476,12 +477,12 @@ This manual process is also extensive as it involves verifying the individual de
 % Side note: there may be instances where a chainID is reused (e.g., deprecated chains)
 
 % Choosing an \ac*{RPC} provider is important since each provider offers different security and privacy benefits.
-There are three options for adding a new network on a MetaMask wallet, and each option may involve different usability and privacy and security implications:
+There are currently three options for adding a new network on a MetaMask wallet, and each option involves different usability, privacy and security implications:
 \begin{enumerate}
-    \item Users may add a new network from a DApp site (e.g., by initiating a transaction on the relevant blockchain) which would send the wallet network information including the DApp's preferred \ac*{RPC} provider (as shown in Fig.~\ref{figAddNetworkWarnings}). In this case, the wallet prioritizes simplicity and prompts the user to add the network specified by the DApp. This prompt does not allow the user to select a different (e.g., more privacy-friendly) \ac*{RPC}, or even indicate the possibility of changing providers. Thus, users may consent to using the displayed network though they may not be fully informed or even aware of more privacy-friendly choices. %If the user approves, it is assumed that they have consented (although they may not be fully informed) to the provider's privacy policies. 
+    \item Users may add a new network from a DApp site (e.g., by initiating a transaction on the relevant blockchain) which would send the wallet network information including the DApp's preferred \ac*{RPC} provider (as shown in Fig.~\ref{figAddNetworkWarnings}). In this case, the wallet prioritizes simplicity and prompts the user to add the network specified by the DApp. This prompt does not allow the user to select a different (e.g., privacy-centric) \ac*{RPC}, or even indicate the possibility of changing providers. Thus, users may consent to using the displayed network though they may not be fully informed or even aware of other choices. %If the user approves, it is assumed that they have consented (although they may not be fully informed) to the provider's privacy policies. 
 
     \item Second, for a small subset of (popular) networks~\cite{metamaskAddCustomNetwork}, users can add the network automatically from the MetaMask interface using suggested providers (e.g., a related entity---see Sect.~\ref{sec:background:rpc}). %; the UI in this option warns about privacy issues in networks that include tracking.
-    Wallets may be able to inform users about potential security and privacy issues with specific network providers, however, this may be possible only for a limited number of networks. %e.g., those managed by the wallet itself (see Sect.~\ref{sec:background:rpc}). %and unlikely to cover all network providers.
+    Wallets may be able to inform users about potential security and privacy issues with certain network providers, however this may be possible only for a small number of (prominent) networks. %e.g., those managed by the wallet itself (see Sect.~\ref{sec:background:rpc}). %and unlikely to cover all network providers.
 
     \item Third, users can add a network on their wallet by manually configuring the network such as their preferred \ac*{RPC} (Fig.~\ref{figAddCustomNetwork}). Although this option offers the most control to users, it may not be straightforward to identify legitimate network providers that are trustworthy. %secure and private.
 \end{enumerate}
@@ -506,10 +507,11 @@ However, users may become desensitized to security warnings especially when they
 % In web3, the current wallet design of prompting users to re-add blockchains and showing excessive number of warnings may be ineffective.
 
 \subsubsection*{\textbf{Future Work}}
-When adding a network, users should be made aware of alternative providers who may offer better security and privacy.
-To this end, when adding networks via DApps, wallets can simply display an option to change the provider before adding to the wallet.
-It is important for users to be informed about available choices before they make a decision since adding a network to the wallet immediately exposes personal information such as user's IP address and wallet addresses (which can then be linked to past transactions, compromising privacy).
-To further support informed user decisions, DApps and wallets could list more than one provider for the user to choose from, and provide information about the benefits of each network in terms of transaction speed, gas fees, security and privacy properties; existing resources such as ChainList\footnote{\url{https://chainlist.org/?chain=1}} already provide information about alterantive \ac*{RPC} servers and their privacy and speed.
+When adding a network, users should be made aware of alternative choices, especially those with better security and privacy.
+To this end, when adding new networks via DApps, wallets can simply display an option to change the provider. % before adding to the wallet.
+It is crucial to inform users about available choices before they make a decision since adding a network to the wallet immediately exposes personal information such as user's IP address and wallet addresses (which can then be linked to publicly available transactions).
+To further support informed decisions, DApps and wallets could list more than one provider for the user to choose from, and provide information about the benefits of each network related to speed, gas fees, security and privacy properties; existing resources such as ChainList\footnote{\url{https://chainlist.org/?chain=1}} already provide such information about \ac*{RPC} servers. % and their privacy and speed.
+Future studies could examine the effectiveness of prompt warnings and integrate security information about network providers.
 
 % To support informed user choices about networks, DApps and wallets should provide information on security and privacy policies of network providers.
 % This approach would involve fewer user checks and thus may reduce user fatigue.
@@ -519,7 +521,6 @@ To further support informed user decisions, DApps and wallets could list more th
 
 \subsection{Issue 3: Unpredictable function behaviour}
 \label{sec:results:contracts}
-% TODO -- look into ASE 2021 (Automating user notice generation for smart contract functions) https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=7840&context=sis_research
 % Issues -- Contracts are difficult to verify, e.g., not enough information on prompts to help users verify; unverified contracts are noticeable (wallet just shows the hex values for unverified addresses)
 % Similar to any unknown code, 
 %There are several risks associated with contracts, including potential for loss of the user's funds due to vulnerabilities and scams.
