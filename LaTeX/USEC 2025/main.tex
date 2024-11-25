@@ -520,6 +520,12 @@ Future studies could examine the effectiveness of prompt warnings and integrate 
 % The number of false warnings can be reduced if the wallet prompts
 
 % = = = = = = = = = = = = = = = = = =  = = = = = = = = =
+\begin{figure}[tb]
+	\centering
+	\includegraphics[width=\columnwidth]{screenshots/trx-predicted-changes-merged}
+	\caption{MetaMask's transaction predictions in different DApps.}
+	\label{figTrxPredictions}
+\end{figure}
 
 \subsection{Issue 3: Unpredictable function behaviour}
 \label{sec:results:contracts}
@@ -529,13 +535,17 @@ Future studies could examine the effectiveness of prompt warnings and integrate 
 % It is important to provide users with information about the contracts they interact with to help mitigate these risks.
 % However, users are not provided with information about contracts to inform about these risks.
 %During our analysis, we observed interfaces to be often lacking useful information about the risks of triggering contracts. %with partially useful information about contracts, however these were often incomplete or limited to certain transactions.
-When prompting for a transaction approval, MetaMask includes predicted changes (Fig.~\ref{figTrxPredictions}) to the user's balances (i.e., estimated amount ``sent'' and amount ``received'') for recognized tokens and blockchains~\cite{metamaskEstimatedChanges}.
-Among 40 transaction prompts, we found 25 prompts (63\%) with predictions on received tokens.
+When prompting for a transaction approval, MetaMask sometimes includes predicted changes to the user's balances. %(i.e., estimated ``send'' and ``receive'' amounts). 
+%for recognized tokens and blockchains~\cite{metamaskEstimatedChanges}.
+These estimates are only available for a limited number of transactions~\cite{metamaskEstimatedChanges} and when included, it is often incomplete. 
+For example, some prompts only include estimate for `send' amount, while others with a `receive' field include ambiguous details that may not be useful, as highlighted in Fig.~\ref{figTrxPredictions}.
+Among 40 transaction prompts, we found 25 prompts (63\%) with predictions on both send and receive tokens, whereas 10 prompts (25\%) included only send amount estimate.
 % This feature~\cite{metamaskEstimatedChanges} involves sending transaction data to the wallet's server, which raises privacy concerns.
 % In addition to accuracy concerns, 
 % These predictions might lead to misplaced trust on DApps as some users might falsely believe that they would be receiving tokens, i.e.,  
-Such predictions may mislead users into falsely assuming that the transaction would actually result in receiving tokens whereas the wallet does not perform any security checks, i.e., misplacing trust on the contract despite the lack of validation or security checks.
-Though the wallet warns (in a small icon) that the predictions are not guaranteed, users may not fully comprehend the risks or may miss the warning completely.
+Such predictions may mislead users into falsely assuming that the transaction would complete as expected whereas the wallet does not perform any security checks, i.e., misplacing trust on the contract despite the lack of validation or security checks.
+Though the wallet warns that these predictions are not guaranteed, users may miss the warning completely as it is indicated within a small icon (Fig.~\ref{figTrxPredictions}).
+Moreover, the lack of consistency might make it challenging for users to understand its limitations and fully comprehend the risks.
 % TODO -- find usable security work related to trustworthness. E.g., https://www.sciencedirect.com/science/article/pii/S1071581905000121
 
 % These predictions might lead to users misplacing their trust on the contract despite the lack of any security checks by the wallet.
@@ -552,24 +562,6 @@ Solidity, the primary language for contracts, provides developers the ability to
 However, most of the contracts in the wild do not include such comments~\cite{hu2021automating}.
 Automated generation of these comments could help fill this gap~\cite{hu2021automating} but such comments may not provide accurate descriptions of contracts and may lead some users into a false sense of security about contract behavior.
 Another line of research focuses on security tools (e.g.,~\cite{kalra2018zeus,tsankov2018security}) to identify vulnerable contracts, however informing users about these issues (e.g., in end-user interfaces) remains an open challenge.
-
-\begin{figure}[tb]
-\centering
-\begin{minipage}{0.48\columnwidth}
-	\centering
-	\includegraphics[width=0.8\columnwidth]{screenshots/trx-predicted-changes}
-	\caption{Transaction predictions by wallet.}
-	\label{figTrxPredictions}
-\end{minipage}
-\hfill
-\begin{minipage}{0.48\columnwidth}
-	\centering
-	\includegraphics[width=0.6\columnwidth]{screenshots/unlimited-approval}
-	\caption{DApp request for unlimited approval.}
-	\label{figUnlimitedApproval}
-\end{minipage}
-%\caption{Challenges in adding a new network to the wallet.}
-\end{figure}
 
 % Although there are proposals and implementations that could help inform, we observe a lack of standard design that 
 
