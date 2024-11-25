@@ -324,7 +324,7 @@ We used the MetaMask wallet for these tasks.
 
 \subsection{A Sample Walkthrough}
 
-For space considerations, we do not present the full details of each walkthrough of the 4 core tasks over the 50 DApps in our study. However we have made all walkthroughs publicly available.\footnote{GitHub: link removed for anonymity, can distribute via program chairs as needed.} Here we present one representative sample walkthrough of the third core task (T3) (transaction approval) for Uniswap~\cite{uniswap}, a decentralized exchange service on Ethereum allowing users to exchange one type of (ERC-20) token for another. For this case, it was conducted independently by two reviewers and discussed. Note however the walkthrough is not intended to evaluate the usability of Uniswap per se, but to collect common usability issues that lead to dangerous errors (G5) across DApps. For this reason, we did not compute agreement statistics, we simply accumulated all issues found by all reviewers.
+For space considerations, we do not present the full details of each walkthrough of the 4 core tasks over the 50 DApps in our study. However we have made all walkthroughs publicly available.\footnote{GitHub: link removed for anonymity, can distribute via program chairs as needed.} Here we present one representative sample walkthrough of the third core task (T3) (transaction approval) for Uniswap~\cite{uniswap}, a decentralized exchange service on Ethereum allowing users to exchange one type of (ERC-20) token for another. For this case, it was conducted independently by two reviewers and discussed.
 
 We assume the persona of a typical web3 user who owns one or more tokens, uses a common wallet such as MetaMask, and has basic understanding about Ethereum tokens and transactions.
 For this task, we also assume the user has already connected their wallet to Uniswap (T1) and successfully switched to a target network (T2). % exchange ETH to Tether USD on Base
@@ -336,7 +336,7 @@ and select to buy USDT using the token search option.
 % If the input is a variation of the token (e.g., ``usdt''), the search returns an empty list.
 % This is a slight violation of G1.
 %The search displayed the correct token only when the input exactly matched ``USDT''. Other variations (e.g., ``usdt'' or ``tether'') did not yield similar results, violating G1.
-Searching ``usdt'' displayed three entries of which one was marked with an warning symbol. When selected, a prompt cautioned that the token was not among frequently traded tokens.
+Searching ``usdt'' displayed three entries of which one was marked with a warning symbol. When selected, a prompt cautioned that the token was not among frequently traded tokens.
 While only one entry was marked with this symbol, two entries triggered the same warning prompt.
 %The results included two tokens displayed with the same name ``Tether USD'' and symbol ``USDT'', though with different icons and addresses.
 % potentially confusing users despite differences in the address. %, and a warning icon beside one of the result. 
@@ -354,6 +354,8 @@ At the top of the prompt, a small icon beside the contract address displays a ge
 This violates G2 as there is no guidance on how to verify.
 The prompt also includes a section with predictions about the resulting balance changes, however this is not guaranteed as indicated within an icon.
 We discuss this issue further in Sec.~\ref{sec:results:contracts}.
+The prompt summarizes the source and destination addresses in abbreviated form, which varies depending on the width of the extension window (\texttt{0xCb135\ldots 5D\ldots}).
+
 The prompt also includes estimated gas fees and an option to set a limit on the maximum fee.
 This option (in a secondary prompt) lists four choices with different limits and processing times (options with lower fees tradeoff on longer wait times).
 
@@ -379,6 +381,7 @@ We were conscious of the fact that the rankings on \textit{DAppRadar} are known 
 We evaluated a set of four core tasks which does not cover other tasks users might perform on DApps, such as connecting with other users on social DApps.
 % For example, users may use DApps to connect with other users in web3 games.
 Finally, our expert evaluations may not accurately represent users' behaviour in practice. % uncover all usability issues faced by typical users.
+Our walkthroughs are not intended to evaluate the usability of the DApp per se, but to collect common usability issues that lead to dangerous errors (G5) across DApps. For this reason, we did not compute agreement statistics (or even have multiple reviewers for most DApps), we simply accumulated all issues found by all reviewers.
 Our evaluations still uncover important usability issues that carry significant security and privacy implications for users.
 % this first look usability evaluation aims to identify high-priority
 % We particularly focused on violations that may lead to dangerous errors (G5) that likely carry significant security and privacy implications.
@@ -416,7 +419,7 @@ Our evaluations still uncover important usability issues that carry significant 
 \section{Research Agenda}
 \label{sec:results:topIssues}
 
-We now present the highest priority usability issues we found during our walkthroughs of 50 DApps, focusing on issues that may lead users to make dangerous errors (G5). We would direct future research efforts to consider these issues.
+After completing the walkthroughs of the 50 DApps, we discussed the findings and identified a set of four common usability issues hat may lead users to make dangerous errors (G5) across numerous DApps. We would direct future research efforts to consider these issues.
 
 % = = = = = = = = = = = = = = = = = =  = = = = = = = = =
 
