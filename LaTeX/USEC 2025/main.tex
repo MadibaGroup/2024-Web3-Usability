@@ -427,7 +427,7 @@ After completing the walkthroughs of the 50 DApps, we discussed the findings and
 \subsection{Issue 1: User interfaces, indicators, and prompts}
 
 Users can have multiple DApp websites open at once, while the wallet is a singular and separate interface. We found MetaMask attempts to associate prompts with its originating DApp by displaying domain names, however it is inconsistent.
-In 100\% of the ($n=45$) prompts for adding a network (Fig.~\ref{figAddNetwork}), we found that the wallet did not link prompts to websites: \textit{e.g.,} `allow \textit{this site} to add a network?' Connecting to a malicious network compromises the user's privacy (links user's IP address and wallet addresses), displays information about the state of the blockchain, and can propose fraudulent transactions (timed to follow specific user actions). In other cases, the domain is shown but the visual cue varies (boxed/rounded/unboxed; domain/url/favicon; sizes/colors/locations); overall, we found six variations (shown in Fig.~\ref{figDappIndicators}) in how the wallet displays the domains.
+In 100\% of the ($n=45$) prompts for adding a network (Fig.~\ref{figAddNetwork}), we found that the wallet did not link prompts to websites: \textit{e.g.,} `allow \textit{this site} to add a network?' Connecting to a malicious network compromises the user's privacy (links user's IP address and wallet addresses), displays information about the state of the blockchain, and can propose fraudulent transactions (timed to follow specific user actions). In other cases, the domain is shown but the visual cue varies (boxed/rounded/unboxed; domain/url/favicon; sizes/colors/locations); overall, we found six variations (shown in Fig.~\ref{figDappIndicators}) in how the wallet displays the domains and never in a consistent location.
 
 \begin{figure}[tb]
 \centering
@@ -514,7 +514,7 @@ However, users may become desensitized to security warnings especially when they
 When adding a network, users should be made aware of alternative choices, especially those with better security and privacy.
 To this end, when adding new networks via DApps, wallets can simply display an option to change the provider. % before adding to the wallet.
 It is crucial to inform users about available choices before they make a decision since adding a network to the wallet immediately exposes personal information such as user's IP address and wallet addresses (which can then be linked to publicly available transactions).
-To further support informed decisions, DApps and wallets could list more than one provider for the user to choose from, and provide information about the benefits of each network related to speed, gas fees, security and privacy properties; existing resources such as ChainList\footnote{\url{https://chainlist.org/?chain=1}} already provide such information about \ac*{RPC} servers. % and their privacy and speed.
+To further support informed decisions, DApps and wallets could list more than one provider for the user to choose from, and provide information about the benefits of each network related to speed, gas fees, security and privacy properties; existing resources such as ChainList already provide such information about \ac*{RPC} servers. % and their privacy and speed.
 Future studies could examine the effectiveness of prompt warnings and integrate security information about network providers.
 
 % To support informed user choices about networks, DApps and wallets should provide information on security and privacy policies of network providers.
