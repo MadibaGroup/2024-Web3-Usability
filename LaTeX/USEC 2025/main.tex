@@ -358,7 +358,7 @@ The prompt also includes a section with predictions about the resulting balance 
 We discuss this issue further in Sec.~\ref{sec:results:contracts}.
 The prompt summarizes the source and destination addresses in abbreviated form, which varies depending on the width of the extension window (\textit{e.g.,} \texttt{0xCb135\ldots 5D\ldots}), and the prompt muddles together source information (such as balances) with destination information (such as addresses). 
 
-The prompt also includes estimated `gas' fees which is Ethereum's system for paying for transaction execution. Option to set a limit on the maximum fee.
+The prompt also includes estimated `gas' fees which is Ethereum's system for paying for transaction execution, and an option to set a limit on the maximum fee.
 This option (in a secondary prompt) lists four choices with different limits and processing times (options with lower fees tradeoff on longer wait times).
 After processing a transaction at ``market'' rates, we tried ``low'' gas. 
 The wallet notified that the transaction had failed without any description.
@@ -540,14 +540,15 @@ Future studies could examine the effectiveness of prompt warnings and integrate 
 When prompting for a transaction approval, MetaMask sometimes includes predicted changes to the user's balances. %(i.e., estimated ``send'' and ``receive'' amounts). 
 %for recognized tokens and blockchains~\cite{metamaskEstimatedChanges}.
 These estimates are only available for a limited number of transactions~\cite{metamaskEstimatedChanges} and when included, it is often incomplete. 
-For example, some prompts only include estimate for `send' amount, while others with a `receive' field include ambiguous details that may not be useful, as highlighted in Fig.~\ref{figTrxPredictions}.
-Among 40 transaction prompts, we found 25 prompts (63\%) with predictions on both send and receive tokens, whereas 10 prompts (25\%) included only send amount estimate.
+For example, some prompts only include an estimate for `send' amount, while other prompts include a `receive' field but often with ambiguous details that may not be useful, as highlighted in Fig.~\ref{figTrxPredictions}.
+%Among 40 transaction prompts, we found 25 prompts (63\%) with predictions on both send and receive tokens, whereas 10 prompts (25\%) included only send amount estimate.
+We found 25 of 40 prompts (63\%) with predictions on both send and receive amounts, and 10 prompts (25\%) with estimates for only send amounts.
 % This feature~\cite{metamaskEstimatedChanges} involves sending transaction data to the wallet's server, which raises privacy concerns.
 % In addition to accuracy concerns, 
 % These predictions might lead to misplaced trust on DApps as some users might falsely believe that they would be receiving tokens, i.e.,  
 Such predictions may mislead users into falsely assuming that the transaction would complete as expected whereas the wallet does not perform any security checks, i.e., misplacing trust on the contract despite the lack of validation or security checks.
 Though the wallet warns that these predictions are not guaranteed, users may miss the warning completely as it is indicated within a small icon (Fig.~\ref{figTrxPredictions}).
-Moreover, the lack of consistency might make it challenging for users to understand its limitations and fully comprehend the risks.
+Moreover, the lack of consistency might make it challenging for users to understand its limitations and to fully comprehend the risks.
 % TODO -- find usable security work related to trustworthness. E.g., https://www.sciencedirect.com/science/article/pii/S1071581905000121
 
 % These predictions might lead to users misplacing their trust on the contract despite the lack of any security checks by the wallet.
